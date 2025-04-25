@@ -1,0 +1,24 @@
+{{% extends "layout.html" %}}
+
+{{% block head %}}
+<!-- <script type='text/javascript' src="/static/js/script.js?time={time}"></script> -->
+<script type='text/javascript'>
+{javascript_str}
+</script>
+{{% endblock %}}
+{{% block content %}}
+  <h2>{title}</h2>
+
+  <div class="row">
+    <div class="col-sm-6">
+
+  <form action="{url_for}" method=post>
+    {form_elements}
+    
+    {{{{ form.submit }}}}
+  </form>
+
+ </div>
+ </div>
+    
+{{% endblock %}}

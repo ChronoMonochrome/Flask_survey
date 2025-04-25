@@ -1,0 +1,361 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<script src="/static/js/getElementsByClassName-1.0.1.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<form id="form1" action="/survey" method="post">
+<div align="center">
+<h1> АНКЕТА
+<div class="clearfix" style="margin-top: 0px"></div>
+для педагогов дошкольных/школьных образовательных организаций</h1>
+<div class="clearfix" style="margin-top: 23px"></div>
+<h4 style=" font-style: italic;" >
+Уважаемы педагоги!
+Просим Вас принять участие в данном анкетировании. Оно позволит нам определиться с выбором форм работы по развитию финансовой грамотности в 2020 году.
+Мы гарантируем конфиденциальность Ваших мнений и оценок. Все данные будут представлены только в обобщенном виде.
+</h4>
+</div>
+
+<div class="clearfix" style="margin-top: 40px"></div>
+
+<div id="a01">
+<b>1.	Как Вы считаете, что означает понятие «финансовая грамотность»? </b><br>
+<label><input type="radio" class="a01" name="a01" value="1">а)	умение эффективно управлять личными финансами; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01" name="a01" value="2">б)	умение грамотно вести учет своих доходов и расходов; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01" name="a01" value="3">в)	иметь актуальную информацию о ситуации на финансовых рынках; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01" name="a01" value="4">г)	умение разбираться в особенностях различных финансовых продуктов и услуг; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01" name="a01" value="5">д)	умение принимать обоснованные решения в отношении финансовых продуктов и услуг и нести ответственность за такие решения; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01" name="a01" value="6">е)	это фиктивное понятие, не имеющее отношение к реальной жизни; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01" name="a01" value="7">ж)	затрудняюсь ответить.</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a02">
+<b>2.	Считаете ли Вы себя финансово грамотным человеком? Дайте оценку своим знаниям и навыкам.</b><br>
+<label><input type="radio" class="a02" name="a02" value="1">а)	знаний и навыков нет; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02" name="a02" value="2">б)	очень плохие знания и навыки; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02" name="a02" value="3">в)	плохие знания и навыки; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02" name="a02" value="4">г)	достаточные знания и навыки; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02" name="a02" value="5">д)	хорошие знания и навыки;</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02" name="a02" value="6">е)	очень хорошие знания и навыки; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02" name="a02" value="7">ж)	отличные знания и навыки; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02" name="a02" value="8">з)	затрудняюсь ответить.</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a03">
+<b>3.	Какие источники получения информации по вопросам финансовой грамотности Вы хотели бы иметь? (Можно выбрать несколько (не более 3) ответов)</b><br>
+<input type="hidden" name="a03_01" value="0">
+<label><input type="checkbox" class="a03" name="a03_01" value="1">а)	специальные социальные учреждения для получения консультаций у специалистов;</label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a03_02" value="0">
+<label><input type="checkbox" class="a03" name="a03_02" value="1">б)	обучающие программы по телевидению;</label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a03_03" value="0">
+<label><input type="checkbox" class="a03" name="a03_03" value="1">в)	обучающие вебинары и курсы в интернете;</label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a03_04" value="0">
+<label><input type="checkbox" class="a03" name="a03_04" value="1">г)	специальные образовательные программы, проводимые участниками финансовых рынков (пенсионные фонды, инвестиционные фонды, страховые компании, банки и т.п.);</label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a03_05" value="0">
+<label><input type="checkbox" class="a03" name="a03_05" value="1">д)	в рамках курсов повышения квалификации;</label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a03_06" value="0">
+<label><input type="checkbox" class="a03" name="a03_06" value="1">е)	отдельный предмет «Основы финансовой грамотности»;</label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a03_07" value="0">
+<label><input type="checkbox" class="a03" name="a03_07" value="1">ж)	специальные печатные издания;</label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a03_08" value="0">
+<label><input type="checkbox" class="a03" name="a03_08" value="1">з)	возможность прохождения специальных курсов по месту работы или учебы;</label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a03_09" value="0">
+<label><input type="checkbox" class="a03" name="a03_09" value="1">и)	возможность прохождения специальных курсов по месту жительства;</label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a03_10" value="0">
+<label><input type="checkbox" class="a03" name="a03_10" value="1">к)	ничего из выше перечисленного мне не нужно;</label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a03_11" value="0">
+<label><input type="checkbox" class="a03" name="a03_11" value="1">л)	затрудняюсь ответить.</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a04">
+<b>4.	Нуждаетесь ли Вы в повышении своей финансовой грамотности?</b><br>
+<label><input type="radio" class="a04" name="a04" value="1">а)	да, это сейчас важнейший вопрос для меня;</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04" name="a04" value="2">б)	да, сильно нуждаюсь;</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04" name="a04" value="3">в)	скорее да;</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04" name="a04" value="4">г)	скорее нет;</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04" name="a04" value="5">д)	нет, не нуждаюсь;</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04" name="a04" value="6">е)	затрудняюсь ответить.</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a05">
+<b>5.	Как Вы считаете, необходимо ли изучение основ финансовой грамотности в дошкольных/школьных образовательных организациях? </b><br>
+<label><input type="radio" class="a05" name="a05" value="1">а)	да, это крайне важно и необходимо сейчас;</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05" name="a05" value="2">б)	да, необходимо;</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05" name="a05" value="3">в)	скорее да;</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05" name="a05" value="4">г)	скорее нет;</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05" name="a05" value="5">д)	нет, в этом нет необходимости;</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05" name="a05" value="6">е)	затрудняюсь ответить.</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a06">
+<b>6.	Как часто Вы интересуетесь вопросами финансовой ситуации в стране и Ставропольском крае?</b><br>
+<label><input type="radio" class="a06" name="a06" value="1">а)	постоянно интересуюсь этими вопросами;</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06" name="a06" value="2">б)	довольно часто, держу этот вопрос под контролем; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06" name="a06" value="3">в)	иногда, эпизодически интересуюсь; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06" name="a06" value="4">г)	довольно редко обращаю на это внимание; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06" name="a06" value="5">д)	не интересуюсь, в этом нет необходимости; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06" name="a06" value="6">е)	затрудняюсь ответить.</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a07">
+<b>7.	В какой форме необходимо изучение финансовой грамотности в дошкольных/школьных образовательных организациях? </b><br>
+<label><input type="radio" class="a07" name="a07" value="1">а)	факультативные занятия;</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07" name="a07" value="2">б)	элективные курсы; </label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07" name="a07" value="3">в)	затрудняюсь ответить.</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+
+<style>
+ul.my {
+list-style-type: none;
+width: 37em;
+padding: 0;
+margin: 0;       
+}
+
+li {
+    display: inline-block;
+}
+
+ul.my > li {
+margin: 0.25em;
+width: 36em;
+border: 1px solid #CCC;
+height: 2em;
+line-height: 2em;       
+}
+
+ul.order {
+list-style-type: none;
+width: 2em;
+padding: 0;
+margin: 0;       
+}
+
+ul.order > li {
+margin: 0.25em;
+width: 1em;
+border: 1px solid #CCC;
+height: 2em;
+line-height: 2em;       
+}
+
+</style>
+
+<div id="a08" class="a08">
+<!--<input type='hidden' id='thedata'> -->
+<input type='hidden' id='a08_01' name='a08_01'>
+<input type='hidden' id='a08_02' name='a08_02'>
+<input type='hidden' id='a08_03' name='a08_03'>
+<input type='hidden' id='a08_04' name='a08_04'>
+<input type='hidden' id='a08_05' name='a08_05'>
+<input type='hidden' id='a08_06' name='a08_06'>
+<input type='hidden' id='a08_07' name='a08_07'>
+<b>8.	Какими информационными источниками Вы пользуетесь для получения сведений по вопросам финансовой грамотности? Пронумеруйте их в порядке значимости для Вас (1 – самое значимое; 2 – на втором месте и т.д.)</b><br>
+<!--
+а)	массовые периодические издания (газеты, журналы);<br>
+б)	телевидение;<br>
+в)	интернет, социальные сети;<br>
+г)	специализированные периодические издания о мире финансов;<br>
+д)	специальную литературу о финансах;<br>
+е)	советы друзей и знакомых;<br>
+ж)	не пользуюсь ничем из выше перечисленного.<br>
+-->
+ <div class="flash_info">Подсказка: перетащите варианты ответа в правой части так, чтобы поставить их в нужное соответствие номерам слева.</div>
+ <div>
+	<div style="float: left">
+	  <ul class="order">
+		<li>1)</li>
+		<li>2)</li>
+		<li>3)</li>
+		<li>4)</li>
+		<li>5)</li>
+		<li>6)</li>
+		<li>7)</li>
+	  </ul>
+	</div>
+
+	<div style="float: left">
+	  <ul id='sortable' class="a08 my">
+		<li id='_a08_01'>а)	массовые периодические издания (газеты, журналы);</li>
+		<li id='_a08_02'>б)	телевидение;</li>
+		<li id='_a08_03'>в)	интернет, социальные сети;</li>
+		<li id='_a08_04'>г)	специализированные периодические издания о мире финансов;</li>
+		<li id='_a08_05'>д)	специальную литературу о финансах;</li>
+		<li id='_a08_06'>е)	советы друзей и знакомых;</li>
+		<li id='_a08_07'>ж)	не пользуюсь ничем из выше перечисленного.</li>
+	  </ul>
+	</div>
+</div>
+
+
+</div>
+
+<div class="clearfix" style="margin-top: 46px"></div>
+<div id="a09">
+<b>9.	Какие вопросы Вас больше всего интересуют в плане повышения уровня своей финансовой грамотности? (Можно выбрать несколько (не более 3) ответов)</b><br>
+<input type="hidden" name="a09_01" value="0">
+<label><input type="checkbox" class="a09" name="a09_01" value="1">а)	банковские услуги (кредиты, депозиты); </label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a09_02" value="0">
+<label><input type="checkbox" class="a09" name="a09_02" value="1">б)	планирование личного бюджета; </label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a09_03" value="0">
+<label><input type="checkbox" class="a09" name="a09_03" value="1">в)	функционирование пенсионной системы, пенсионные фонды; </label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a09_04" value="0">
+<label><input type="checkbox" class="a09" name="a09_04" value="1">г)	налогообложение физических лиц; </label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a09_05" value="0">
+<label><input type="checkbox" class="a09" name="a09_05" value="1">д)	функционирование страховой системы, страховые полисы; </label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a09_06" value="0">
+<label><input type="checkbox" class="a09" name="a09_06" value="1">е)	фондовые рынки (акции, облигации, ПИФы и т.п.); </label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a09_07" value="0">
+<label><input type="checkbox" class="a09" name="a09_07" value="1">ж)	ничего из выше перечисленного меня не интересует; </label><div class="clearfix" style="margin-top: 0px"></div>
+<input type="hidden" name="a09_08" value="0">
+<label><input type="checkbox" class="a09" name="a09_08" value="1">з)	затрудняюсь ответить. </label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+
+<input type="submit" value="Отправить">
+</form>
+
+<script>
+var count = 0;
+
+function get_checkbox_hander(min_checked_boxes, max_checked_boxes, checkbox_class) {
+	window[checkbox_class].count = 0;
+	window[checkbox_class].min = min_checked_boxes;
+	window[checkbox_class].max = max_checked_boxes;
+	
+	return function (evt) {
+		var className = evt.srcElement.className;
+		console.log("check");
+		
+		if (this.checked) {
+			if (window[className].count >= window[className].max) {
+				alert("Пожалуйста, выберите не более " + window[className].max + " ответов.");
+				return false;
+			}
+			window[className].count++;
+		} else
+			window[className].count--;
+	};
+}
+/*
+var docObserver = new MutationObserver(function (mutations, me) {
+	// `mutations` is an array of mutations that occurred
+	// `me` is the MutationObserver instance
+	var checkboxes_a19 = document.getElementsByClassName("a19");
+
+	if (checkboxes_a19.length > 0) {
+		var chbx_hndl = get_checkbox_hander(3, "a19");
+		[].forEach.call(checkboxes_a19, function(i) {
+			i.onclick = chbx_hndl;
+		});
+
+		me.disconnect();
+	}
+});
+
+
+docObserver.observe(document, {
+	childList: true,
+	subtree: true
+});
+*/
+function add_checkbox_handler(min_checked_boxes, max_checked_boxes, checkbox_class) {
+	var checkboxes = document.getElementsByClassName(checkbox_class);
+	var chbx_hndl = get_checkbox_hander(min_checked_boxes, max_checked_boxes, checkbox_class);
+	[].forEach.call(checkboxes, function(i) {
+		i.onclick = chbx_hndl;
+	});
+}
+
+add_checkbox_handler(1, 3, "a03");
+add_checkbox_handler(1, 3, "a09");
+</script>
+
+
+
+<script type=text/javascript>
+var submitted = false;
+
+(function($) {
+    $.fn.goTo = function() {
+        $('html, body').animate({
+            scrollTop: $(this).offset().top + 'px'
+        }, 'fast');
+        return this; // for chaining...
+    }
+})(jQuery);
+
+$(document).ready(function() {
+  $("#form1").submit(function(e){
+	var sortable_array = $( "#sortable" ).sortable("toArray");
+	//e.preventDefault();
+	for (const key in sortable_array) {
+		var option = sortable_array[key];
+		var new_val = (parseInt(key) + 1);
+		console.log("set " + option.substring(1) + " = " + new_val);
+		$('#' + option.substring(1)).val(new_val);
+	}
+	//e.preventDefault();
+	//$('#thedata').val($( "#sortable" ).sortable("toArray"));
+	submitted = true;  
+	//var answers = ["a01", "a02", "a03", "a04", "a05", "a06", "a07", "a08", "a09", "a10", "a11", "a12", "a13", "a14", "a15", "a16", "a17", "a18", "a19", "a20"]
+	//var answer_str = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
+	var answers = ["a01", "a02", "a03", "a04", "a05", "a06", "a07", "a09"];
+	var answer_str = ["1", "2", "3", "4", "5", "6", "7", "9"];
+
+	for (var j = 0; j < answers.length; ++j) {
+		var res = false;
+
+		var answer = getElementsByClassName(answers[j]);
+		console.dir(answer);
+		for (var i = 0; i < answer.length; ++i) {
+			var variant = answer[i];  
+			if (variant.checked) {
+				res = true;
+				//alert(answer_str[j]);
+				//break;
+			}
+		}
+		if (!res){
+			alert("Обратите внимание, что перед отправкой ответов необходимо ответить на все вопросы, которые подразумевают выбор одного варианта ответа. Вы не выбрали вариант ответа на вопрос " + answer_str[j] + ".");
+			e.preventDefault();
+			$("#".concat(answers[j])).goTo();
+			break;
+		}
+	}
+  });
+  
+  
+
+window.onbeforeunload = function(e) {
+	if (!submitted) {
+		var dialogText = 'Перезагрузить страницу? Данные могут быть не сохранены.';
+		e.returnValue = dialogText;
+		return dialogText;
+	}
+}
+
+});
+
+$('ul#sortable').sortable({
+    helper: 'clone',
+    start: function(event, ui) {
+        $("ul#sortable > li").eq($(ui.item).index()).after(
+        $(ui.item).clone().addClass('clone').show());
+    },
+    remove: function(event, ui) {
+        $("ul#sortable > li").removeClass('clone');
+    },
+    stop: function(event, ui) {
+        $("ul#sortable > li.clone").remove();
+    }
+});
+
+</script>
+
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Edit Team Members</title>
+    </head>
+    <body>
+        <h1>Edit Team</h1>
+        <div>
+            <form action="" method="post" name="teamform">
+                Team Title: {{ teamform.title }}<br>
+                <div>
+                    <table>
+                        <tr>
+                            <th> Name </th>
+                            <th> ID </th>
+                            <th> Inbox Share </th>
+                        </tr>
+                        {% for member in teamform.teammembers %}
+                        <tr>
+                            <td>{{ member.name }}</td>
+                            <td>{{ member.member_id }}</td>
+                            <td>{{ member.inbox_share }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <p><input type="submit" name="edit" value="Send"></p>
+            </form>
+        </div>
+    </body>
+</html>

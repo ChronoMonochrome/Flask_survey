@@ -1,0 +1,326 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<script src="/static/js/getElementsByClassName-1.0.1.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<form id="form1" action="/survey_teachers" method="post">
+<div align="center">
+<h1> Экспресс-опросник</h1>
+<div class="clearfix" style="margin-top: 23px"></div>
+<h4 style=" font-style: italic;" >
+
+Уважаемые коллеги!
+
+<br>
+
+Оцените, пожалуйста, насколько Вы согласны или не согласны с приведенными утверждениями, и в соответствии с этим поставьте галочку или любой другой значок напротив каждого утверждения:
+Обратите внимание, что перед отправкой ответов необходимо ответить на все вопросы. Ответив на все вопросы, нажмите кнопку "Отправить" внизу страницы.
+<br>
+</h4>
+</div>
+<div id="a1"><b>1. В смешанных браках обычно больше проблем, чем в браках между людьми одной национальности</b><br><div id="a1">
+<label><input type="radio" class="a01" name="a01" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01" name="a01" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01" name="a01" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01" name="a01" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01" name="a01" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01" name="a01" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a2"><b>2. К кавказцам станут относиться лучше, если они изменят свое поведение</b><br><div id="a2">
+<label><input type="radio" class="a02" name="a02" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02" name="a02" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02" name="a02" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02" name="a02" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02" name="a02" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02" name="a02" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a3"><b>3. Нормально считать, что твой народ лучше, чем все остальные</b><br><div id="a3">
+<label><input type="radio" class="a03" name="a03" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03" name="a03" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03" name="a03" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03" name="a03" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03" name="a03" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03" name="a03" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a4"><b>4. Я готов принять в качестве члена своей семьи человека любой национальности</b><br><div id="a4">
+<label><input type="radio" class="a04" name="a04" value="1">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04" name="a04" value="2">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04" name="a04" value="3">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04" name="a04" value="4">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04" name="a04" value="5">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04" name="a04" value="6">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a5"><b>5. Я хочу, чтобы среди моих друзей были люди разных национальностей</b><br><div id="a5">
+<label><input type="radio" class="a05" name="a05" value="1">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05" name="a05" value="2">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05" name="a05" value="3">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05" name="a05" value="4">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05" name="a05" value="5">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05" name="a05" value="6">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a6"><b>6. К некоторым нациям и народам трудно хорошо относиться</b><br><div id="a6">
+<label><input type="radio" class="a06" name="a06" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06" name="a06" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06" name="a06" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06" name="a06" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06" name="a06" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06" name="a06" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a7"><b>7. Я могу представить чернокожего человека своим близким другом</b><br><div id="a7">
+<label><input type="radio" class="a07" name="a07" value="1">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07" name="a07" value="2">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07" name="a07" value="3">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07" name="a07" value="4">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07" name="a07" value="5">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07" name="a07" value="6">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a8"><b>8. В средствах массовой информации может быть представлено любое мнение</b><br><div id="a8">
+<label><input type="radio" class="a08" name="a08" value="1">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08" name="a08" value="2">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08" name="a08" value="3">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08" name="a08" value="4">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08" name="a08" value="5">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08" name="a08" value="6">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a9"><b>9. Нищие и бродяги сами виноваты в своих проблемах</b><br><div id="a9">
+<label><input type="radio" class="a09" name="a09" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09" name="a09" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09" name="a09" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09" name="a09" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09" name="a09" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09" name="a09" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a10"><b>10. С неопрятными людьми неприятно общаться</b><br><div id="a10">
+<label><input type="radio" class="a10" name="a10" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10" name="a10" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10" name="a10" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10" name="a10" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10" name="a10" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10" name="a10" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a11"><b>11. Всех психически больных людей необходимо изолировать от общества</b><br><div id="a11">
+<label><input type="radio" class="a11" name="a11" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a11" name="a11" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a11" name="a11" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a11" name="a11" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a11" name="a11" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a11" name="a11" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a12"><b>12. Беженцам надо помогать не больше, чем всем остальным, так как у местных проблем не меньше</b><br><div id="a12">
+<label><input type="radio" class="a12" name="a12" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a12" name="a12" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a12" name="a12" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a12" name="a12" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a12" name="a12" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a12" name="a12" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a13"><b>13. Для наведения порядка в стране необходима "сильная рука"</b><br><div id="a13">
+<label><input type="radio" class="a13" name="a13" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a13" name="a13" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a13" name="a13" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a13" name="a13" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a13" name="a13" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a13" name="a13" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a14"><b>14. Приезжие должны иметь те же права, что и местные жители</b><br><div id="a14">
+<label><input type="radio" class="a14" name="a14" value="1">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a14" name="a14" value="2">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a14" name="a14" value="3">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a14" name="a14" value="4">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a14" name="a14" value="5">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a14" name="a14" value="6">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a15"><b>15. Любые религиозные течения имеют право на существование</b><br><div id="a15">
+<label><input type="radio" class="a15" name="a15" value="1">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a15" name="a15" value="2">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a15" name="a15" value="3">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a15" name="a15" value="4">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a15" name="a15" value="5">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a15" name="a15" value="6">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a16"><b>16. Если друг предал, надо отомстить ему</b><br><div id="a16">
+<label><input type="radio" class="a16" name="a16" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a16" name="a16" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a16" name="a16" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a16" name="a16" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a16" name="a16" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a16" name="a16" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a17"><b>17. В споре может быть правильной только одна точка зрения</b><br><div id="a17">
+<label><input type="radio" class="a17" name="a17" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a17" name="a17" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a17" name="a17" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a17" name="a17" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a17" name="a17" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a17" name="a17" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a18"><b>18. Даже если у меня есть свое мнение, я готов выслушать и другие точки зрения</b><br><div id="a18">
+<label><input type="radio" class="a18" name="a18" value="1">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a18" name="a18" value="2">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a18" name="a18" value="3">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a18" name="a18" value="4">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a18" name="a18" value="5">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a18" name="a18" value="6">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a19"><b>19. Если кто-то поступает со мной грубо, я отвечаю тем же</b><br><div id="a19">
+<label><input type="radio" class="a19" name="a19" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a19" name="a19" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a19" name="a19" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a19" name="a19" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a19" name="a19" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a19" name="a19" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a20"><b>20. Человек, который думает не так, как я, вызывает у меня раздражение</b><br><div id="a20">
+<label><input type="radio" class="a20" name="a20" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a20" name="a20" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a20" name="a20" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a20" name="a20" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a20" name="a20" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a20" name="a20" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a21"><b>21. Беспорядок меня очень раздражает</b><br><div id="a21">
+<label><input type="radio" class="a21" name="a21" value="6">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a21" name="a21" value="5">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a21" name="a21" value="4">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a21" name="a21" value="3">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a21" name="a21" value="2">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a21" name="a21" value="1">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a22"><b>22. Я хотел бы стать более терпимым человеком по отношению к другим</b><br><div id="a22">
+<label><input type="radio" class="a22" name="a22" value="1">Абсолютно не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a22" name="a22" value="2">Не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a22" name="a22" value="3">Скорее не согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a22" name="a22" value="4">Скорее согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a22" name="a22" value="5">Согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a22" name="a22" value="6">Полностью согласен</label><div class="clearfix" style="margin-top: 0px"></div>
+
+</div>
+<div class="clearfix" style="margin-top: 10px"></div>
+
+<input type="submit" value="Отправить">
+</form>
+
+<script type=text/javascript>
+var submitted = false;
+
+
+$(document).ready(function() {
+/*
+(function($) {
+    $.fn.goTo = function() {
+        $('html, body').animate({
+            scrollTop: $(this).offset().top + 'px'
+        }, 'fast');
+        return this; // for chaining...
+    }
+})(jQuery);*/
+
+  $("#form1").submit(function(e){
+	console.log("submit");
+	submitted = true;  
+	//e.preventDefault();
+	var answers = ["a01", "a02", "a03", "a04", "a05", "a06", "a07", "a08", "a09", "a10", "a11", "a12", "a13", "a14", "a15", "a16", "a17", "a18", "a19", "a20", "a21", "a22"];
+	var answer_str = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22"];
+	//var answers = ["a01", "a02", "a03", "a04", "a05", "a06", "a07", "a09"];
+	//var answer_str = ["1", "2", "3", "4", "5", "6", "7", "9"];
+
+	for (var j = 0; j < answers.length; ++j) {
+		var res = false;
+
+		var answer = getElementsByClassName(answers[j]);
+		console.dir(answer);
+		for (var i = 0; i < answer.length; ++i) {
+			var variant = answer[i];  
+			if (variant.checked) {
+				res = true;
+				//alert(answer_str[j]);
+				//break;
+			}
+		}
+		if (!res){
+			alert("Обратите внимание, что перед отправкой ответов необходимо ответить на все вопросы, которые подразумевают выбор одного варианта ответа. Вы не выбрали вариант ответа на вопрос " + answer_str[j] + ".");
+			e.preventDefault();
+			//$("#".concat(answers[j])).goTo();
+			break;
+		}
+	}
+	//e.preventDefault();
+  });
+  
+  
+/*
+window.onbeforeunload = function(e) {
+	if (!submitted) {
+		var dialogText = 'Перезагрузить страницу? Данные могут быть не сохранены.';
+		e.returnValue = dialogText;
+		return dialogText;
+	}
+}*/
+
+});
+
+/*$('ul#sortable').sortable({
+    helper: 'clone',
+    start: function(event, ui) {
+        $("ul#sortable > li").eq($(ui.item).index()).after(
+        $(ui.item).clone().addClass('clone').show());
+    },
+    remove: function(event, ui) {
+        $("ul#sortable > li").removeClass('clone');
+    },
+    stop: function(event, ui) {
+        $("ul#sortable > li.clone").remove();
+    }
+});*/
+
+</script>
+
+
+
+
+{% endblock %}

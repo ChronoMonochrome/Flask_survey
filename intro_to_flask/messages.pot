@@ -1,0 +1,439 @@
+# Translations template for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-11-23 12:00+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: intro_to_flask/form_factory.py:217
+msgid "Submit"
+msgstr ""
+
+#: intro_to_flask/parse_orgs.py:255 intro_to_flask/parse_orgs.py:292
+#: intro_to_flask/parse_orgs.py:298 intro_to_flask/parse_orgs.py:305
+#: intro_to_flask/parse_orgs.py:311
+msgid "Муниципальное образование"
+msgstr ""
+
+#: intro_to_flask/parse_orgs.py:256
+msgid "Наименование образовательной организации"
+msgstr ""
+
+#: intro_to_flask/parse_orgs.py:257 intro_to_flask/parse_orgs.py:291
+#: intro_to_flask/parse_orgs.py:293 intro_to_flask/parse_orgs.py:318
+#: intro_to_flask/parse_orgs.py:322
+msgid "ИНН"
+msgstr ""
+
+#: intro_to_flask/routes.py:150
+msgid "All fields are required."
+msgstr ""
+
+#: intro_to_flask/routes.py:250 intro_to_flask/routes.py:271
+#: intro_to_flask/routes.py:291
+msgid "Your data was saved."
+msgstr ""
+
+#: intro_to_flask/routes.py:476
+msgid "student_form"
+msgstr ""
+
+#: intro_to_flask/views.py:162 intro_to_flask/views.py:163
+#: intro_to_flask/views.py:164 intro_to_flask/views.py:165
+#: intro_to_flask/views.py:166 intro_to_flask/views.py:167
+msgid "predmet_competition"
+msgstr ""
+
+#: intro_to_flask/views.py:168 intro_to_flask/views.py:169
+#: intro_to_flask/views.py:170
+msgid "metod_competition"
+msgstr ""
+
+#: intro_to_flask/views.py:171
+msgid "psy_ped_competition"
+msgstr ""
+
+#: intro_to_flask/views.py:172
+msgid "communication_competition"
+msgstr ""
+
+#: intro_to_flask/dashforms/simple_dash_form.py:15
+msgid "Hello Dash"
+msgstr ""
+
+#: intro_to_flask/dashforms/simple_dash_form.py:18
+msgid "Dash: A web application framework for Python."
+msgstr ""
+
+#: intro_to_flask/forms/contact_form.py:8
+#: intro_to_flask/forms/signup_form.py:11
+msgid "Name"
+msgstr ""
+
+#: intro_to_flask/forms/contact_form.py:8
+#: intro_to_flask/forms/signup_form.py:12
+msgid "Please enter your name."
+msgstr ""
+
+#: intro_to_flask/forms/contact_form.py:9
+msgid "Email"
+msgstr ""
+
+#: intro_to_flask/forms/contact_form.py:9
+#: intro_to_flask/forms/contact_form.py:10
+msgid "Please enter your email address."
+msgstr ""
+
+#: intro_to_flask/forms/contact_form.py:11
+msgid "Subject"
+msgstr ""
+
+#: intro_to_flask/forms/contact_form.py:11
+msgid "Please enter a subject."
+msgstr ""
+
+#: intro_to_flask/forms/contact_form.py:12
+msgid "Message"
+msgstr ""
+
+#: intro_to_flask/forms/contact_form.py:12
+msgid "Please enter a message."
+msgstr ""
+
+#: intro_to_flask/forms/contact_form.py:13
+msgid "Send"
+msgstr ""
+
+#: intro_to_flask/forms/nsur_table_form.py:13
+#: intro_to_flask/forms/test_form.py:25
+msgid "Save"
+msgstr ""
+
+#: intro_to_flask/forms/signin_form.py:7 intro_to_flask/forms/signup_form.py:7
+msgid "Login"
+msgstr ""
+
+#: intro_to_flask/forms/signin_form.py:7 intro_to_flask/forms/signin_form.py:8
+#: intro_to_flask/forms/signup_form.py:8
+msgid "Please enter your login."
+msgstr ""
+
+#: intro_to_flask/forms/signin_form.py:9 intro_to_flask/forms/signup_form.py:15
+msgid "Password"
+msgstr ""
+
+#: intro_to_flask/forms/signin_form.py:9 intro_to_flask/forms/signup_form.py:16
+msgid "Please enter a password."
+msgstr ""
+
+#: intro_to_flask/forms/signin_form.py:10
+#: intro_to_flask/templates/layout.html:50
+#: intro_to_flask/templates/signin.html:4
+msgid "Sign In"
+msgstr ""
+
+#: intro_to_flask/forms/signin_form.py:23
+msgid "Invalid login or password"
+msgstr ""
+
+#: intro_to_flask/forms/signup_form.py:19 intro_to_flask/forms/test_form.py:16
+msgid "Role"
+msgstr ""
+
+#: intro_to_flask/forms/signup_form.py:20
+msgid "student"
+msgstr ""
+
+#: intro_to_flask/forms/signup_form.py:21
+msgid "teacher"
+msgstr ""
+
+#: intro_to_flask/forms/signup_form.py:22
+msgid "employee"
+msgstr ""
+
+#: intro_to_flask/forms/signup_form.py:25
+msgid "Create account"
+msgstr ""
+
+#: intro_to_flask/forms/signup_form.py:36
+msgid "That login is already taken"
+msgstr ""
+
+#: intro_to_flask/forms/upload_form.py:8
+msgid "Please choose file to upload"
+msgstr ""
+
+#: intro_to_flask/pytranslations/new.py:3
+msgid "school"
+msgstr ""
+
+#: intro_to_flask/pytranslations/new.py:4
+msgid "parents"
+msgstr ""
+
+#: intro_to_flask/pytranslations/new.py:5
+msgid "teachers"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:3
+#: intro_to_flask/pytranslations/student_competition.py:3
+msgid "id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:4
+msgid "student_competition_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:5
+msgid "municipality_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:6
+msgid "organization_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:7
+msgid "settlement_type_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:8
+msgid "level_educational_organization_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:9
+msgid "surname"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:10
+msgid "name"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:11
+msgid "middle_name"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:12
+msgid "age_range_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:13
+msgid "teaching_experience_range_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:14
+msgid "work_experience_subject_range_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:15
+msgid "total_load_range_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:16
+msgid "load_on_subject_range_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:17
+msgid "number_of_subjects_taught"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:18
+msgid "education_type_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:19
+msgid "category_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:20
+msgid "retraining_institution_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:21
+msgid "retraining_date_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:22
+msgid "training_institution_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student.py:23
+msgid "training_date_id"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student_competition.py:4
+msgid "predmet_n1"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student_competition.py:5
+msgid "predmet_n2"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student_competition.py:6
+msgid "predmet_n3"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student_competition.py:7
+msgid "predmet_n4"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student_competition.py:8
+msgid "predmet_n5"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student_competition.py:9
+msgid "predmet_n6"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student_competition.py:10
+msgid "metod_n7"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student_competition.py:11
+msgid "metod_n8"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student_competition.py:12
+msgid "metod_n9"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student_competition.py:13
+msgid "psy_ped_n10"
+msgstr ""
+
+#: intro_to_flask/pytranslations/student_competition.py:14
+msgid "communication_n11"
+msgstr ""
+
+#: intro_to_flask/templates/about.html:4
+#: intro_to_flask/templates/layout.html:41
+msgid "About"
+msgstr ""
+
+#: intro_to_flask/templates/about.html:5
+msgid "About_desc"
+msgstr ""
+
+#: intro_to_flask/templates/contact.html:4
+msgid "contact_form"
+msgstr ""
+
+#: intro_to_flask/templates/contact.html:7
+msgid "on_contact_msg_sent"
+msgstr ""
+
+#: intro_to_flask/templates/home.html:37 intro_to_flask/templates/home.html:57
+msgid "survey_count"
+msgstr ""
+
+#: intro_to_flask/templates/home.html:83
+msgid "welcome_str"
+msgstr ""
+
+#: intro_to_flask/templates/home.html:84
+msgid "welcome_str2"
+msgstr ""
+
+#: intro_to_flask/templates/layout.html:4
+msgid "site_name_str"
+msgstr ""
+
+#: intro_to_flask/templates/layout.html:37
+msgid "Logo"
+msgstr ""
+
+#: intro_to_flask/templates/layout.html:40
+msgid "Home"
+msgstr ""
+
+#: intro_to_flask/templates/layout.html:42
+msgid "Contact"
+msgstr ""
+
+#: intro_to_flask/templates/layout.html:44
+msgid "Profile"
+msgstr ""
+
+#: intro_to_flask/templates/layout.html:45
+msgid "Dash"
+msgstr ""
+
+#: intro_to_flask/templates/layout.html:46
+#: intro_to_flask/templates/upload.html:4
+msgid "Upload"
+msgstr ""
+
+#: intro_to_flask/templates/layout.html:47
+msgid "Sign Out"
+msgstr ""
+
+#: intro_to_flask/templates/layout.html:49
+msgid "Sign Up"
+msgstr ""
+
+#: intro_to_flask/templates/layout.html:60
+msgid "Greetings"
+msgstr ""
+
+#: intro_to_flask/templates/nsur_table.html:4
+#: intro_to_flask/templates/nsur_upload.html:4
+#: intro_to_flask/templates/profile.html:4
+#: intro_to_flask/templates/slick_select2_editor.html:34
+msgid "profile_str"
+msgstr ""
+
+#: intro_to_flask/templates/nsur_table.html:5
+#: intro_to_flask/templates/nsur_upload.html:5
+#: intro_to_flask/templates/profile.html:5
+#: intro_to_flask/templates/slick_select2_editor.html:35
+msgid "greetings_str"
+msgstr ""
+
+#: intro_to_flask/templates/signup.html:4
+msgid "Sign up"
+msgstr ""
+
+#: intro_to_flask/templates/slick_select2_editor.html:47
+msgid "add_rows"
+msgstr ""
+
+#: intro_to_flask/templates/slick_select2_editor.html:49
+msgid "add"
+msgstr ""
+
+#: intro_to_flask/templates/slick_select2_editor.html:453
+msgid "data was saved!"
+msgstr ""
+
+#: intro_to_flask/templates/slick_select2_editor.html:455
+msgid "form is not valid"
+msgstr ""
+
+#: intro_to_flask/templates/test.html:4
+msgid "Student form"
+msgstr ""
+
+#: intro_to_flask/templates/upload.html:7
+msgid "File was uploaded successfully!"
+msgstr ""
+
+#: intro_to_flask/templates/upload.html:9
+msgid "This file extension is not allowed."
+msgstr ""
+
+#: intro_to_flask/templates/upload.html:11
+msgid "No file was selected."
+msgstr ""
+

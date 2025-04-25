@@ -1,0 +1,832 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<script src="/static/js/getElementsByClassName-1.0.1.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<form id="form1" action="/survey_parents" method="post">
+<div align="center">
+<h1> АНКЕТА</h1>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<h4 style=" font-style: italic;" >
+С целью определения сфер деятельности, в которых Ваш ребенок может проявить свои таланты наиболее активно, просим Вас оценить степень проявления у ребенка всех указанных характеристик по пятибалльной системе:
+<div class="clearfix" style="margin-top: 0px"></div>
+– 5 баллов – характеристика присуща ребенку в наивысшей степени;
+<div class="clearfix" style="margin-top: 0px"></div>
+– 4 балла – степень проявления характеристики выше средней;
+<div class="clearfix" style="margin-top: 0px"></div>
+– 3 балла – средняя степень проявления характеристики;
+<div class="clearfix" style="margin-top: 0px"></div>
+– 2 балла – низкая степень проявления характеристики.
+<div class="clearfix" style="margin-top: 20px"></div>
+Пожалуйста, выберите среди перечисленных ниже вариантов ответ, который Вы считаете подходящим. Для выбора ответа достаточно сделать клик левой кнопкой мыши по тексту ответа.
+Обратите внимание, что перед отправкой ответов необходимо ответить на все вопросы. Ответив на все вопросы, нажмите кнопку "Отправить" внизу страницы.
+
+Ваше мнение нам очень важно и будет учтено в дальнейшей работе.<br>
+</h4>
+<div class="clearfix" style="margin-top: 69px"></div>
+<div id="a01"><h4><b>I. Интеллектуальная сфера</b></h4><br><div id="a01_01">
+<b>1. Высокая познавательная активность, мобильность.</b><br>
+<label><input type="radio" class="a01_01" name="a01_01" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_01" name="a01_01" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_01" name="a01_01" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_01" name="a01_01" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a01_02">
+<b>2. Быстрота и точность выполнения умственных операций.</b><br>
+<label><input type="radio" class="a01_02" name="a01_02" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_02" name="a01_02" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_02" name="a01_02" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_02" name="a01_02" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a01_03">
+<b>3. Устойчивость внимания.</b><br>
+<label><input type="radio" class="a01_03" name="a01_03" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_03" name="a01_03" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_03" name="a01_03" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_03" name="a01_03" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a01_04">
+<b>4. Оперативная память – быстро запоминает услышанное или прочитанное без специальных заучиваний, не тра¬тит много времени на повторение того, что нужно за¬помнить.</b><br>
+<label><input type="radio" class="a01_04" name="a01_04" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_04" name="a01_04" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_04" name="a01_04" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_04" name="a01_04" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a01_05">
+<b>5. Навыки логического мышления, хорошо рассуждает, ясно мыслит, не путается в мыслях.</b><br>
+<label><input type="radio" class="a01_05" name="a01_05" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_05" name="a01_05" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_05" name="a01_05" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_05" name="a01_05" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a01_06">
+<b>6. Богатство активного словаря.</b><br>
+<label><input type="radio" class="a01_06" name="a01_06" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_06" name="a01_06" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_06" name="a01_06" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_06" name="a01_06" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a01_07">
+<b>7. Быстрота и оригинальность вербальных (словесных) ас¬социаций. Хорошо улавливает связь между одним собы¬тием и другим, между причиной и следствием. Хорошо понимает недосказанное, догадывается о том, что часто прямо не высказывается взрослыми, но имеется в виду. Улавливает причины поступков других людей, мотивы их поведения.</b><br>
+<label><input type="radio" class="a01_07" name="a01_07" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_07" name="a01_07" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_07" name="a01_07" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_07" name="a01_07" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a01_08">
+<b>8. Выраженная установка на творческое выполнение зада¬ний.</b><br>
+<label><input type="radio" class="a01_08" name="a01_08" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_08" name="a01_08" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_08" name="a01_08" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_08" name="a01_08" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a01_09">
+<b>9. Развитость творческого мышления и воображения.</b><br>
+<label><input type="radio" class="a01_09" name="a01_09" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_09" name="a01_09" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_09" name="a01_09" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_09" name="a01_09" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a01_10">
+<b>10. Владение основными компонентами умения учиться.</b><br>
+<label><input type="radio" class="a01_10" name="a01_10" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_10" name="a01_10" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_10" name="a01_10" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_10" name="a01_10" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a01_11">
+<b>11. Способность контролировать собственную творческую деятельность, повышенный темп умственного развития.</b><br>
+<label><input type="radio" class="a01_11" name="a01_11" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_11" name="a01_11" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_11" name="a01_11" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_11" name="a01_11" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a01_12">
+<b>12. Возможность предвосхищения результата деятельности.</b><br>
+<label><input type="radio" class="a01_12" name="a01_12" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_12" name="a01_12" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_12" name="a01_12" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a01_12" name="a01_12" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 100px"></div></div>
+<div id="a02"><h4><b>II. Сфера академических достижений</b></h4><br><div id="a02_01">
+<b>1. Богатый словарный запас, использование сложных син¬таксических структур.</b><br>
+<label><input type="radio" class="a02_01" name="a02_01" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_01" name="a02_01" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_01" name="a02_01" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_01" name="a02_01" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a02_02">
+<b>2. Повышенный интерес к вычислениям, математическим отношениям.</b><br>
+<label><input type="radio" class="a02_02" name="a02_02" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_02" name="a02_02" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_02" name="a02_02" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_02" name="a02_02" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a02_03">
+<b>3. Повышенное внимание к явлениям природы, проведе¬нию опытов.</b><br>
+<label><input type="radio" class="a02_03" name="a02_03" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_03" name="a02_03" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_03" name="a02_03" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_03" name="a02_03" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a02_04">
+<b>4. Демонстрация понимания причинно-следственных отно¬шений.</b><br>
+<label><input type="radio" class="a02_04" name="a02_04" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_04" name="a02_04" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_04" name="a02_04" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_04" name="a02_04" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a02_05">
+<b>5. Выражает мысли ясно и точно (устно или письменно).</b><br>
+<label><input type="radio" class="a02_05" name="a02_05" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_05" name="a02_05" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_05" name="a02_05" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_05" name="a02_05" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a02_06">
+<b>6. Читает книги, статьи, научно-популярные издания с опе¬режением своих сверстников на год -  два.</b><br>
+<label><input type="radio" class="a02_06" name="a02_06" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_06" name="a02_06" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_06" name="a02_06" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_06" name="a02_06" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a02_07">
+<b>7. Хорошая «моторная» координация, особенно между зри¬тельным восприятием и рукой (хорошо фиксирует то, что видит, и четко записывает то, что слышит).</b><br>
+<label><input type="radio" class="a02_07" name="a02_07" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_07" name="a02_07" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_07" name="a02_07" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_07" name="a02_07" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a02_08">
+<b>8. Чтение научно-популярной литературы доставляет боль¬шее удовольствие, чем чтение художественной.</b><br>
+<label><input type="radio" class="a02_08" name="a02_08" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_08" name="a02_08" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_08" name="a02_08" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_08" name="a02_08" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a02_09">
+<b>9. Не унывает, если его проект не поддержан или если его «эксперимент» не получился.</b><br>
+<label><input type="radio" class="a02_09" name="a02_09" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_09" name="a02_09" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_09" name="a02_09" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_09" name="a02_09" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a02_10">
+<b>10. Пытается выяснить причины и смысл событий.</b><br>
+<label><input type="radio" class="a02_10" name="a02_10" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_10" name="a02_10" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_10" name="a02_10" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_10" name="a02_10" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a02_11">
+<b>11. Уделяет много времени созданию собственных «проектов».</b><br>
+<label><input type="radio" class="a02_11" name="a02_11" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_11" name="a02_11" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_11" name="a02_11" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_11" name="a02_11" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a02_12">
+<b>12. Любит обсуждать научные события, изобретения, час¬то задумывается об этом.</b><br>
+<label><input type="radio" class="a02_12" name="a02_12" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_12" name="a02_12" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_12" name="a02_12" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a02_12" name="a02_12" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 100px"></div></div>
+<div id="a03"><h4><b>III. Творчество</b></h4><br><div id="a03_01">
+<b>1. Высокая продуктивность по множеству разных вещей.</b><br>
+<label><input type="radio" class="a03_01" name="a03_01" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_01" name="a03_01" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_01" name="a03_01" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_01" name="a03_01" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a03_02">
+<b>2. Изобретательность в использовании материалов и идей.</b><br>
+<label><input type="radio" class="a03_02" name="a03_02" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_02" name="a03_02" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_02" name="a03_02" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_02" name="a03_02" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a03_03">
+<b>3. Склонность к завершенности и точности в занятиях.</b><br>
+<label><input type="radio" class="a03_03" name="a03_03" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_03" name="a03_03" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_03" name="a03_03" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_03" name="a03_03" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a03_04">
+<b>4. Задает много вопросов по интересующему его предмету.</b><br>
+<label><input type="radio" class="a03_04" name="a03_04" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_04" name="a03_04" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_04" name="a03_04" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_04" name="a03_04" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a03_05">
+<b>5. Любит рисовать.</b><br>
+<label><input type="radio" class="a03_05" name="a03_05" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_05" name="a03_05" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_05" name="a03_05" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_05" name="a03_05" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a03_06">
+<b>6. Проявляет тонкое чувство юмора.</b><br>
+<label><input type="radio" class="a03_06" name="a03_06" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_06" name="a03_06" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_06" name="a03_06" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_06" name="a03_06" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a03_07">
+<b>7. Не боится быть таким, как все.</b><br>
+<label><input type="radio" class="a03_07" name="a03_07" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_07" name="a03_07" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_07" name="a03_07" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_07" name="a03_07" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a03_08">
+<b>8. Склонен к фантазиям, к игре.</b><br>
+<label><input type="radio" class="a03_08" name="a03_08" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_08" name="a03_08" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_08" name="a03_08" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a03_08" name="a03_08" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 100px"></div></div>
+<div id="a04"><h4><b>IV.Литературная сфера</b></h4><br><div id="a04_01">
+<b>1. Может легко «построить» рассказ, начиная от завязки сюжета и кончая разрешением какого-либо конфликта.</b><br>
+<label><input type="radio" class="a04_01" name="a04_01" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_01" name="a04_01" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_01" name="a04_01" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_01" name="a04_01" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a04_02">
+<b>2. Придумывает что-то новое и необычное, когда расска¬зывает о чем-то уже знакомом и известном всем.</b><br>
+<label><input type="radio" class="a04_02" name="a04_02" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_02" name="a04_02" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_02" name="a04_02" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_02" name="a04_02" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a04_03">
+<b>3. Придерживается только необходимых деталей в расска¬зах о событиях, все несущественное отбрасывает, ос¬тавляет главное, наиболее характерное.</b><br>
+<label><input type="radio" class="a04_03" name="a04_03" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_03" name="a04_03" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_03" name="a04_03" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_03" name="a04_03" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a04_04">
+<b>4. Умеет хорошо придерживаться выбранного сюжета, не теряет основную мысль.</b><br>
+<label><input type="radio" class="a04_04" name="a04_04" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_04" name="a04_04" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_04" name="a04_04" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_04" name="a04_04" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a04_05">
+<b>5. Умеет передать эмоциональное состояние героев, их пе¬реживания и чувства.</b><br>
+<label><input type="radio" class="a04_05" name="a04_05" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_05" name="a04_05" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_05" name="a04_05" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_05" name="a04_05" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a04_06">
+<b>6. Умеет ввести в рассказы такие детали, которые важны для понимания события, о котором идет речь, и в то же время не упускает основной сюжетной линии.</b><br>
+<label><input type="radio" class="a04_06" name="a04_06" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_06" name="a04_06" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_06" name="a04_06" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_06" name="a04_06" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a04_07">
+<b>7. Любит писать рассказы или статьи.</b><br>
+<label><input type="radio" class="a04_07" name="a04_07" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_07" name="a04_07" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_07" name="a04_07" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_07" name="a04_07" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a04_08">
+<b>8. Изображает в своих рассказах героев живыми, передает их чувства и настроения.</b><br>
+<label><input type="radio" class="a04_08" name="a04_08" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_08" name="a04_08" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_08" name="a04_08" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a04_08" name="a04_08" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 100px"></div></div>
+<div id="a05"><h4><b>V. Артистическая сфера</b></h4><br><div id="a05_01">
+<b>1. Легко входит в роль другого персонажа, человека.</b><br>
+<label><input type="radio" class="a05_01" name="a05_01" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_01" name="a05_01" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_01" name="a05_01" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_01" name="a05_01" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a05_02">
+<b>2. Интересуется актерской игрой.</b><br>
+<label><input type="radio" class="a05_02" name="a05_02" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_02" name="a05_02" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_02" name="a05_02" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_02" name="a05_02" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a05_03">
+<b>3. Меняет тональность и выражения голоса, когда изобра¬жает другого человека.</b><br>
+<label><input type="radio" class="a05_03" name="a05_03" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_03" name="a05_03" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_03" name="a05_03" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_03" name="a05_03" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a05_04">
+<b>4. Понимает и изображает конфликтную ситуацию, когда имеет возможность разыграть какую-либо драматичес¬кую сцену.</b><br>
+<label><input type="radio" class="a05_04" name="a05_04" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_04" name="a05_04" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_04" name="a05_04" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_04" name="a05_04" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a05_05">
+<b>5. Передает чувства через мимику, жесты, движения.</b><br>
+<label><input type="radio" class="a05_05" name="a05_05" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_05" name="a05_05" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_05" name="a05_05" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_05" name="a05_05" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a05_06">
+<b>6. Стремится вызывать эмоциональные реакции у других людей, когда о чем-либо с увлечением рассказывают.</b><br>
+<label><input type="radio" class="a05_06" name="a05_06" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_06" name="a05_06" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_06" name="a05_06" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_06" name="a05_06" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a05_07">
+<b>7. С большой легкостью драматизирует, передает чувства и эмоциональные переживания.</b><br>
+<label><input type="radio" class="a05_07" name="a05_07" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_07" name="a05_07" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_07" name="a05_07" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_07" name="a05_07" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a05_08">
+<b>8. Пластичен и открыт для всего нового, «не зацикливает¬ся» на старом. Не любит уже испытанных вариантов, всегда проверяет возникшую идею и только после «экспериментальной» проверки может от нее отказаться.</b><br>
+<label><input type="radio" class="a05_08" name="a05_08" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_08" name="a05_08" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_08" name="a05_08" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a05_08" name="a05_08" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 100px"></div></div>
+<div id="a06"><h4><b>VI. Музыкальная сфера</b></h4><br><div id="a06_01">
+<b>1. Отзывается очень быстро и легко на ритм и мелодии.</b><br>
+<label><input type="radio" class="a06_01" name="a06_01" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_01" name="a06_01" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_01" name="a06_01" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_01" name="a06_01" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a06_02">
+<b>2. Хорошо поет.</b><br>
+<label><input type="radio" class="a06_02" name="a06_02" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_02" name="a06_02" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_02" name="a06_02" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_02" name="a06_02" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a06_03">
+<b>3. В игру на инструменте, в пение или танец вкладывает много энергии и чувств.</b><br>
+<label><input type="radio" class="a06_03" name="a06_03" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_03" name="a06_03" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_03" name="a06_03" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_03" name="a06_03" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a06_04">
+<b>4. Любит музыкальные занятия. Стремится пойти на кон¬церт или туда, где можно слушать музыку.</b><br>
+<label><input type="radio" class="a06_04" name="a06_04" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_04" name="a06_04" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_04" name="a06_04" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_04" name="a06_04" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a06_05">
+<b>5. Может петь вместе с другими так, чтобы получалось слаженно и хорошо.</b><br>
+<label><input type="radio" class="a06_05" name="a06_05" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_05" name="a06_05" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_05" name="a06_05" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_05" name="a06_05" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a06_06">
+<b>6. В пении или музыке выражает свои чувства, состояние.</b><br>
+<label><input type="radio" class="a06_06" name="a06_06" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_06" name="a06_06" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_06" name="a06_06" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_06" name="a06_06" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a06_07">
+<b>7. Сочиняет оригинальные, свои собственные мелодии.</b><br>
+<label><input type="radio" class="a06_07" name="a06_07" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_07" name="a06_07" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_07" name="a06_07" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_07" name="a06_07" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a06_08">
+<b>8. Хорошо играет на каком-нибудь инструменте.</b><br>
+<label><input type="radio" class="a06_08" name="a06_08" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_08" name="a06_08" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_08" name="a06_08" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a06_08" name="a06_08" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 100px"></div></div>
+<div id="a07"><h4><b>VII. Техническая сфера</b></h4><br><div id="a07_01">
+<b>1. Хорошо выполняет всякие задания по ручному труду.</b><br>
+<label><input type="radio" class="a07_01" name="a07_01" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_01" name="a07_01" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_01" name="a07_01" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_01" name="a07_01" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a07_02">
+<b>2. Интересуется механизмами и машинами.</b><br>
+<label><input type="radio" class="a07_02" name="a07_02" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_02" name="a07_02" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_02" name="a07_02" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_02" name="a07_02" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a07_03">
+<b>3. В мир его увлечений входит конструирование машин, приборов, моделей поездов, радиоприемников.</b><br>
+<label><input type="radio" class="a07_03" name="a07_03" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_03" name="a07_03" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_03" name="a07_03" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_03" name="a07_03" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a07_04">
+<b>4. Может легко чинить испорченные приборы, использовать старые детали для создания новых поделок, игрушек.</b><br>
+<label><input type="radio" class="a07_04" name="a07_04" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_04" name="a07_04" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_04" name="a07_04" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_04" name="a07_04" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a07_05">
+<b>5. Понимает причины «капризов» механизмов, любит зага¬дочные поломки.</b><br>
+<label><input type="radio" class="a07_05" name="a07_05" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_05" name="a07_05" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_05" name="a07_05" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_05" name="a07_05" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a07_06">
+<b>6. Любит рисовать чертежи механизмов.</b><br>
+<label><input type="radio" class="a07_06" name="a07_06" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_06" name="a07_06" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_06" name="a07_06" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_06" name="a07_06" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a07_07">
+<b>7. Читает журналы и статьи о создании новых приборов и машин.</b><br>
+<label><input type="radio" class="a07_07" name="a07_07" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_07" name="a07_07" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_07" name="a07_07" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a07_07" name="a07_07" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 100px"></div></div>
+<div id="a08"><h4><b>VIII. Двигательная сфера</b></h4><br><div id="a08_01">
+<b>1. Тонкость и точность моторики.</b><br>
+<label><input type="radio" class="a08_01" name="a08_01" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_01" name="a08_01" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_01" name="a08_01" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_01" name="a08_01" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a08_02">
+<b>2. Развитая двигательно-моторная координация.</b><br>
+<label><input type="radio" class="a08_02" name="a08_02" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_02" name="a08_02" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_02" name="a08_02" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_02" name="a08_02" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a08_03">
+<b>3. Стремится к двигательным занятиям (физкультура).</b><br>
+<label><input type="radio" class="a08_03" name="a08_03" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_03" name="a08_03" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_03" name="a08_03" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_03" name="a08_03" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a08_04">
+<b>4. Любит участвовать в спортивных играх и состязаниях.</b><br>
+<label><input type="radio" class="a08_04" name="a08_04" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_04" name="a08_04" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_04" name="a08_04" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_04" name="a08_04" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a08_05">
+<b>5. Постоянно преуспевает в каком-нибудь виде спортив¬ной игры.</b><br>
+<label><input type="radio" class="a08_05" name="a08_05" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_05" name="a08_05" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_05" name="a08_05" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_05" name="a08_05" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a08_06">
+<b>6. В свободное время любит ходить в походы, играть в под¬вижные игры (хоккей, футбол, баскетбол и т. д.).</b><br>
+<label><input type="radio" class="a08_06" name="a08_06" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_06" name="a08_06" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_06" name="a08_06" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a08_06" name="a08_06" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 100px"></div></div>
+<div id="a09"><h4><b>IX. Сфера художественных достижений</b></h4><br><div id="a09_01">
+<b>1. Проявляет большой интерес к визуальной информации.</b><br>
+<label><input type="radio" class="a09_01" name="a09_01" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_01" name="a09_01" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_01" name="a09_01" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_01" name="a09_01" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a09_02">
+<b>2. Проявляет большой интерес к серьезным занятиям в художественной сфере.</b><br>
+<label><input type="radio" class="a09_02" name="a09_02" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_02" name="a09_02" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_02" name="a09_02" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_02" name="a09_02" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a09_03">
+<b>3. Рисунки и картины отличаются разнообразием сюжетов.</b><br>
+<label><input type="radio" class="a09_03" name="a09_03" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_03" name="a09_03" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_03" name="a09_03" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_03" name="a09_03" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a09_04">
+<b>4. Серьезно относится к произведениям искусства. </b><br>
+<label><input type="radio" class="a09_04" name="a09_04" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_04" name="a09_04" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_04" name="a09_04" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_04" name="a09_04" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a09_05">
+<b>5. Стано¬вится вдумчивым и очень серьезным, когда видит хоро¬шую картину, слышит музыку, видит необычную скуль¬птуру, красиво и художественно выполненную вещь.</b><br>
+<label><input type="radio" class="a09_05" name="a09_05" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_05" name="a09_05" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_05" name="a09_05" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_05" name="a09_05" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a09_06">
+<b>6. Оригинален в выборе сюжета (в рисунке, сочинении, описании какого-либо события), составляет оригиналь¬ные композиции (из цветов, рисунка, камней, марок, от¬крыток и т. д.).</b><br>
+<label><input type="radio" class="a09_06" name="a09_06" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_06" name="a09_06" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_06" name="a09_06" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_06" name="a09_06" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a09_07">
+<b>7. Всегда готов использовать какой-либо новый материал для изготовления игрушки, картины, рисунка, компо¬зиции, в строительстве детских домиков на игровой пло¬щадке, в работе с ножницами, клеем.</b><br>
+<label><input type="radio" class="a09_07" name="a09_07" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_07" name="a09_07" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_07" name="a09_07" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_07" name="a09_07" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a09_08">
+<b>8. Когда имеет свободное время, охотно рисует, лепит, со¬здает композиции, имеющие художественное назначе¬ние (украшение для дома, одежды и т. д.).</b><br>
+<label><input type="radio" class="a09_08" name="a09_08" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_08" name="a09_08" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_08" name="a09_08" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_08" name="a09_08" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a09_09">
+<b>9. Прибегает к рисунку или лепке для того, чтобы выра¬зить свои чувства и настроение.</b><br>
+<label><input type="radio" class="a09_09" name="a09_09" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_09" name="a09_09" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_09" name="a09_09" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_09" name="a09_09" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a09_10">
+<b>10. Любит работать с клеем, пластилином, глиной, для того чтобы изображать события или вещи в трех измерениях в пространстве.</b><br>
+<label><input type="radio" class="a09_10" name="a09_10" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_10" name="a09_10" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_10" name="a09_10" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_10" name="a09_10" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a09_11">
+<b>11. Интересуется произведениями искусства, созданными другими людьми. Может дать свою собственную оценку и попытается воспроизвести увиденное в своих работах.</b><br>
+<label><input type="radio" class="a09_11" name="a09_11" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_11" name="a09_11" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_11" name="a09_11" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a09_11" name="a09_11" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 100px"></div></div>
+<div id="a10"><h4><b>X. Общение и лидерство</b></h4><br><div id="a10_01">
+<b>1. Легко приспосабливается к новой ситуации.</b><br>
+<label><input type="radio" class="a10_01" name="a10_01" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_01" name="a10_01" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_01" name="a10_01" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_01" name="a10_01" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a10_02">
+<b>2. Всегда выполняет свои обещания, ответственен.</b><br>
+<label><input type="radio" class="a10_02" name="a10_02" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_02" name="a10_02" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_02" name="a10_02" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_02" name="a10_02" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a10_03">
+<b>3. Высокая общительность с окружающими.</b><br>
+<label><input type="radio" class="a10_03" name="a10_03" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_03" name="a10_03" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_03" name="a10_03" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_03" name="a10_03" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a10_04">
+<b>4. Стремится к доминированию среди сверстников.</b><br>
+<label><input type="radio" class="a10_04" name="a10_04" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_04" name="a10_04" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_04" name="a10_04" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_04" name="a10_04" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 23px"></div>
+<div id="a10_05">
+<b>5. Сверстники обращаются за советом.</b><br>
+<label><input type="radio" class="a10_05" name="a10_05" value="5">5 баллов</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_05" name="a10_05" value="4">4 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_05" name="a10_05" value="3">3 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="radio" class="a10_05" name="a10_05" value="2">2 балла</label><div class="clearfix" style="margin-top: 0px"></div>
+</div>
+<div class="clearfix" style="margin-top: 100px"></div></div>
+<input type="submit" value="Отправить">
+</form>
+
+<script>
+var count = 0;
+
+function get_checkbox_hander(min_checked_boxes, max_checked_boxes, checkbox_class) {
+	window[checkbox_class].count = 0;
+	window[checkbox_class].min = min_checked_boxes;
+	window[checkbox_class].max = max_checked_boxes;
+	
+	return function (evt) {
+		var className = evt.srcElement.className;
+		console.log("check");
+		
+		if (this.checked) {
+			if (window[className].count >= window[className].max) {
+				alert("Пожалуйста, выберите не более " + window[className].max + " ответов.");
+				return false;
+			}
+			window[className].count++;
+		} else
+			window[className].count--;
+	};
+}
+/*
+var docObserver = new MutationObserver(function (mutations, me) {
+	// `mutations` is an array of mutations that occurred
+	// `me` is the MutationObserver instance
+	var checkboxes_a19 = document.getElementsByClassName("a19");
+
+	if (checkboxes_a19.length > 0) {
+		var chbx_hndl = get_checkbox_hander(3, "a19");
+		[].forEach.call(checkboxes_a19, function(i) {
+			i.onclick = chbx_hndl;
+		});
+
+		me.disconnect();
+	}
+});
+
+
+docObserver.observe(document, {
+	childList: true,
+	subtree: true
+});
+*/
+function add_checkbox_handler(min_checked_boxes, max_checked_boxes, checkbox_class) {
+	var checkboxes = document.getElementsByClassName(checkbox_class);
+	var chbx_hndl = get_checkbox_hander(min_checked_boxes, max_checked_boxes, checkbox_class);
+	[].forEach.call(checkboxes, function(i) {
+		i.onclick = chbx_hndl;
+	});
+}
+
+//add_checkbox_handler(1, 3, "a03");
+//add_checkbox_handler(1, 3, "a09");
+</script>
+
+
+
+<script type=text/javascript>
+var submitted = false;
+
+(function($) {
+    $.fn.goTo = function() {
+        $('html, body').animate({
+            scrollTop: $(this).offset().top + 'px'
+        }, 'fast');
+        return this; // for chaining...
+    }
+})(jQuery);
+
+$(document).ready(function() {
+  $("#form1").submit(function(e){
+
+	//e.preventDefault();
+	//$('#thedata').val($( "#sortable" ).sortable("toArray"));
+	submitted = true;  
+	var answers = ['a01_01', 'a01_02', 'a01_03', 'a01_04', 'a01_05', 'a01_06', 'a01_07', 'a01_08', 'a01_09', 'a01_10', 'a01_11', 'a01_12', 'a02_01', 'a02_02', 'a02_03', 'a02_04', 'a02_05', 'a02_06', 'a02_07', 'a02_08', 'a02_09', 'a02_10', 'a02_11', 'a02_12', 'a03_01', 'a03_02', 'a03_03', 'a03_04', 'a03_05', 'a03_06', 'a03_07', 'a03_08', 'a04_01', 'a04_02', 'a04_03', 'a04_04', 'a04_05', 'a04_06', 'a04_07', 'a04_08', 'a05_01', 'a05_02', 'a05_03', 'a05_04', 'a05_05', 'a05_06', 'a05_07', 'a05_08', 'a06_01', 'a06_02', 'a06_03', 'a06_04', 'a06_05', 'a06_06', 'a06_07', 'a06_08', 'a07_01', 'a07_02', 'a07_03', 'a07_04', 'a07_05', 'a07_06', 'a07_07', 'a08_01', 'a08_02', 'a08_03', 'a08_04', 'a08_05', 'a08_06', 'a09_01', 'a09_02', 'a09_03', 'a09_04', 'a09_05', 'a09_06', 'a09_07', 'a09_08', 'a09_09', 'a09_10', 'a09_11', 'a10_01', 'a10_02', 'a10_03', 'a10_04', 'a10_05'];
+
+	for (var j = 0; j < answers.length; ++j) {
+		var res = false;
+
+		var answer = getElementsByClassName(answers[j]);
+		console.dir(answer);
+		for (var i = 0; i < answer.length; ++i) {
+			var variant = answer[i];  
+			if (variant.checked) {
+				res = true;
+				//alert(answer_str[j]);
+				//break;
+			}
+		}
+		if (!res){
+			alert("Обратите внимание, что перед отправкой ответов необходимо ответить на все вопросы, которые подразумевают выбор одного варианта ответа.");
+			e.preventDefault();
+			$("#".concat(answers[j])).goTo();
+			break;
+		}
+	}
+
+  });
+  
+  
+
+window.onbeforeunload = function(e) {
+	if (!submitted) {
+		var dialogText = 'Перезагрузить страницу? Данные могут быть не сохранены.';
+		e.returnValue = dialogText;
+		return dialogText;
+	}
+}
+
+});
+
+
+</script>
+
+
+
+{% endblock %}

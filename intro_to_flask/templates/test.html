@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h2>{{ _("Student form") }}</h2>
+
+  <form action="{{ url_for('test_form') }}" method=post>
+
+    {{ form.name_of_municipality.label }}
+    {{ form.name_of_municipality }}
+    {{ form.name_educational_organization.label }}
+    {{ form.name_educational_organization }}
+    {{ form.type_of_settlement.label }}
+    {{ form.type_of_settlement }}
+    {{ form.level_educational_organization.label }}
+    {{ form.level_educational_organization }}
+    {{ form.surname.label }}
+    {{ form.surname }}
+    {{ form.name.label }}
+    {{ form.name(value = name_def_value) }}
+    {{ form.middle_name.label }}
+    {{ form.middle_name }}
+
+    {{ form.submit }}
+  </form>
+
+{% endblock %}
+

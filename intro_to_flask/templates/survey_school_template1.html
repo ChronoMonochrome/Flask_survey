@@ -1,0 +1,173 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<script src="/static/js/getElementsByClassName-1.0.1.js"></script>
+{% endblock %}
+
+{% block content %}
+
+<form id="form1" action="/survey_school" method="post">
+<div align="center">
+<h1> АНКЕТА</h1>
+<div class="clearfix" style="margin-top: 23px"></div>
+<h4 style=" font-style: italic;" >
+Уважаемые учащиеся!
+
+С целью определения Вашего интереса к определенным видам деятельности, отметьте те утверждения, которые Вам соответствуют.
+</h4>
+</div>
+
+<label><input type="checkbox" class="a1" name="a1" value="0">1. Я умело работаю с предметами.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a2" name="a2" value="0">2. У меня хорошее чувство направления.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a3" name="a3" value="0">3. У меня есть естественная способность решать споры между друзьями.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a4" name="a4" value="0">4. Я могу легко запоминать слова песен.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a5" name="a5" value="0">5. Я могу объяснять темы, которые другим объяснять тяжело.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a6" name="a6" value="0">6. Я всегда делаю все поэтапно.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a7" name="a7" value="0">7. Я хорошо знаю себя и всегда понимаю, почему я поступаю так, а не иначе.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a8" name="a8" value="0">8. Мне нравится работа с общественностью и общественные мероприятия.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a9" name="a9" value="0">9. Я хорошо учусь, слушая других.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a10" name="a10" value="0">10. Когда я слушаю музыку, у меня меняется настроение.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a11" name="a11" value="0">11. Мне нравятся загадки, кроссворды, логические задачи.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a12" name="a12" value="0">12. Для моего обучения очень важно визуальное представление материала: таблицы, графики, схемы.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a13" name="a13" value="0">13. Я чувствителен к настроению и переживаниям окружающих.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a14" name="a14" value="0">14. Я учусь лучше, когда мне что-то нужно делать самостоятельно.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a15" name="a15" value="0">15. Перед тем, как учить что-то, мне нужно понимать, что в этом есть что-то нужное.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a16" name="a16" value="0">16. Я люблю одиночество и тишину во время работы и размышлений.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a17" name="a17" value="0">17. В сложных музыкальных произведениях я могу на слух вычленить отдельные музыкальные инструменты.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a18" name="a18" value="0">18. Я могу зрительно легко представить сцены, которые я помню или которые я придумал.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a19" name="a19" value="0">19. У меня богатый словарный запас.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a20" name="a20" value="0">20. Я люблю делать записи, письменные зарисовки.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a21" name="a21" value="0">21. У меня хорошее чувство равновесия, я люблю движение.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a22" name="a22" value="0">22. Я могу видеть закономерности между понятиями и явлениями.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a23" name="a23" value="0">23. В команде я сотрудничаю с другими, прислушиваюсь к их идеям.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a24" name="a24" value="0">24. Я наблюдателен и часто вижу то, что не видят другие.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a25" name="a25" value="0">25. Меня легко вывести из себя.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a26" name="a26" value="0">26. Я люблю работать и учиться отдельно от других.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a27" name="a27" value="0">27. Я люблю сочинять музыку.</label><div class="clearfix" style="margin-top: 0px"></div>
+<label><input type="checkbox" class="a28" name="a28" value="0">28. Я могу оперировать числами и решать сложные математические задачи.</label><div class="clearfix" style="margin-top: 0px"></div>
+
+<input type="submit" value="Отправить">
+</form>
+
+<script>
+var count = 0;
+
+function get_checkbox_hander(min_checked_boxes, max_checked_boxes, checkbox_class) {
+	window[checkbox_class].count = 0;
+	window[checkbox_class].min = min_checked_boxes;
+	window[checkbox_class].max = max_checked_boxes;
+	
+	return function (evt) {
+		var className = evt.srcElement.className;
+		console.log("check");
+		
+		if (this.checked) {
+			if (window[className].count >= window[className].max) {
+				alert("Пожалуйста, выберите не более " + window[className].max + " ответов.");
+				return false;
+			}
+			window[className].count++;
+		} else
+			window[className].count--;
+	};
+}
+/*
+var docObserver = new MutationObserver(function (mutations, me) {
+	// `mutations` is an array of mutations that occurred
+	// `me` is the MutationObserver instance
+	var checkboxes_a19 = document.getElementsByClassName("a19");
+
+	if (checkboxes_a19.length > 0) {
+		var chbx_hndl = get_checkbox_hander(3, "a19");
+		[].forEach.call(checkboxes_a19, function(i) {
+			i.onclick = chbx_hndl;
+		});
+
+		me.disconnect();
+	}
+});
+
+
+docObserver.observe(document, {
+	childList: true,
+	subtree: true
+});
+*/
+function add_checkbox_handler(min_checked_boxes, max_checked_boxes, checkbox_class) {
+	var checkboxes = document.getElementsByClassName(checkbox_class);
+	var chbx_hndl = get_checkbox_hander(min_checked_boxes, max_checked_boxes, checkbox_class);
+	[].forEach.call(checkboxes, function(i) {
+		i.onclick = chbx_hndl;
+	});
+}
+
+add_checkbox_handler(1, 3, "a03");
+add_checkbox_handler(1, 3, "a09");
+</script>
+
+
+
+<script type=text/javascript>
+var submitted = false;
+
+(function($) {
+    $.fn.goTo = function() {
+        $('html, body').animate({
+            scrollTop: $(this).offset().top + 'px'
+        }, 'fast');
+        return this; // for chaining...
+    }
+})(jQuery);
+
+$(document).ready(function() {
+  $("#form1").submit(function(e){
+
+	//e.preventDefault();
+	//$('#thedata').val($( "#sortable" ).sortable("toArray"));
+	submitted = true;  
+	//var answers = ["a01", "a02", "a03", "a04", "a05", "a06", "a07", "a08", "a09", "a10", "a11", "a12", "a13", "a14", "a15", "a16", "a17", "a18", "a19", "a20"]
+	//var answer_str = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"];
+	var answers = ["a01", "a02", "a03", "a04", "a05", "a06", "a07", "a09"];
+	var answer_str = ["1", "2", "3", "4", "5", "6", "7", "9"];
+/*
+	for (var j = 0; j < answers.length; ++j) {
+		var res = false;
+
+		var answer = getElementsByClassName(answers[j]);
+		console.dir(answer);
+		for (var i = 0; i < answer.length; ++i) {
+			var variant = answer[i];  
+			if (variant.checked) {
+				res = true;
+				//alert(answer_str[j]);
+				//break;
+			}
+		}
+		if (!res){
+			alert("Обратите внимание, что перед отправкой ответов необходимо ответить на все вопросы, которые подразумевают выбор одного варианта ответа. Вы не выбрали вариант ответа на вопрос " + answer_str[j] + ".");
+			e.preventDefault();
+			$("#".concat(answers[j])).goTo();
+			break;
+		}
+	}
+*/
+  });
+  
+  
+
+window.onbeforeunload = function(e) {
+	if (!submitted) {
+		var dialogText = 'Перезагрузить страницу? Данные могут быть не сохранены.';
+		e.returnValue = dialogText;
+		return dialogText;
+	}
+}
+
+});
+
+
+</script>
+
+
+
+{% endblock %}

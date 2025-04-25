@@ -1,0 +1,479 @@
+{% extends "layout.html" %}
+{% block head %}
+  <link rel="stylesheet" href="https://6pac.github.io/SlickGrid/slick.grid.css" type="text/css"/>
+  <link rel="stylesheet" href="https://6pac.github.io/SlickGrid/css/smoothness/jquery-ui-1.11.3.custom.css" type="text/css"/>
+  <link rel="stylesheet" href="/static/css/slick-default-theme.css?time={{time}}" type="text/css"/>
+  <link rel="stylesheet" href="/static/css/slick.css?time={{time}}" type="text/css"/>
+  <link rel="stylesheet" href="https://6pac.github.io/SlickGrid/css/select2.css" type="text/css"/>
+   <style>
+	.select2-container {
+		top: -3px;
+		left: -6px;
+	}
+    .select2-container .select2-selection--single {
+		height: 26px;
+	}  
+	
+	.slickgrid-word-wrap .slick-cell {
+		white-space: normal;
+		overflow: auto;
+	}
+	
+	.slick-column-name { white-space: normal; }
+	.slick-header-column {
+  height: 69px !important;
+}
+
+
+</style>
+
+{% endblock %}
+
+{% block content %}
+  <div class="jumbo">
+    <h2>{{ _("profile_str") }}<h2>
+    <h3>{{ _("greetings_str") }}, {{ session['login'] }}!<h3>
+
+  </div>
+
+<div style="position:relative">
+	<div style="width:100%;" class="slickgrid-word-wrap">
+		<form id="{{form_id}}" action="{{route_url}}" method=post>
+			{{ form.myGrid }}
+			{{ form.submit }}
+			{{ form.data }}
+		</form>
+	</div>
+	<p>{{ _("add_rows") }}</p>
+	<input id="{{slick_id}}_rows_num" type="number" min="0" value="10">
+	<button id="{{slick_id}}_add_rows" onclick="{{slick_id}}_add_rows_func()">{{ _("add") }}</button>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+
+
+<script src="https://6pac.github.io/SlickGrid/lib/firebugx.js"></script>
+<script src="https://6pac.github.io/SlickGrid/lib/jquery-1.11.2.min.js"></script>
+<script src="https://6pac.github.io/SlickGrid/lib/jquery-ui-1.11.3.min.js"></script>
+<script src="https://6pac.github.io/SlickGrid/lib/jquery.event.drag-2.3.0.js"></script>
+<script src="https://6pac.github.io/SlickGrid/slick.core.js"></script>
+<script src="https://6pac.github.io/SlickGrid/plugins/slick.cellrangedecorator.js"></script>
+<script src="https://6pac.github.io/SlickGrid/plugins/slick.cellrangeselector.js"></script>
+<script src="https://6pac.github.io/SlickGrid/plugins/slick.cellexternalcopymanager.js"></script>
+<script src="https://6pac.github.io/SlickGrid/plugins/slick.autotooltips.js"></script>
+<script src="https://6pac.github.io/SlickGrid/plugins/slick.cellselectionmodel.js"></script>
+<script src="https://6pac.github.io/SlickGrid/slick.formatters.js"></script>
+<script src="https://6pac.github.io/SlickGrid/slick.editors.js"></script>
+<script src="https://6pac.github.io/SlickGrid/slick.grid.js"></script>
+<script src="https://6pac.github.io/SlickGrid/lib/select2.js"></script>
+<script src="/static/js/utils.js?time={{time}}"></script>
+
+<script>
+
+  var grid;
+
+  var undoRedoBuffer = {
+      commandQueue : [],
+      commandCtr : 0,
+      queueAndExecuteCommand : function(editCommand) {
+        this.commandQueue[this.commandCtr] = editCommand;
+        this.commandCtr++;
+        editCommand.execute();
+      },
+      undo : function() {
+        if (this.commandCtr == 0) { return; }
+        this.commandCtr--;
+        var command = this.commandQueue[this.commandCtr];
+        if (command && Slick.GlobalEditorLock.cancelCurrentEdit()) {
+          command.undo();
+        }
+      },
+      redo : function() {
+        if (this.commandCtr >= this.commandQueue.length) { return; }
+        var command = this.commandQueue[this.commandCtr];
+        this.commandCtr++;
+        if (command && Slick.GlobalEditorLock.cancelCurrentEdit()) {
+          command.execute();
+        }
+      }
+  }
+  // undo shortcut
+  $(document).keydown(function(e)
+  {
+    if (e.which == 90 && (e.ctrlKey || e.metaKey)) {    // CTRL + (shift) + Z
+      if (e.shiftKey){
+        undoRedoBuffer.redo();
+      } else {
+        undoRedoBuffer.undo();
+      }
+    }
+  });
+  var newRowIds = 0;
+  var pluginOptions = {
+    clipboardCommandHandler: function(editCommand){ undoRedoBuffer.queueAndExecuteCommand.call(undoRedoBuffer,editCommand); },
+    readOnlyMode : false,
+    includeHeaderWhenCopying : false,
+    newRowCreator: function(count) {
+      for (var i = 0; i < count; i++) {
+        var item = {
+          id: "newRow_" + newRowIds++
+        }
+        grid.getData().addItem(item);
+      }
+    }
+  };
+</script>
+
+<script>
+  function CreateAddlHeaderRow() {
+    var $preHeaderPanel = $(grid.getPreHeaderPanel())
+        .empty()
+        .addClass("slick-header-columns")
+        .css('left','-1000px')
+        .width(grid.getHeadersWidth());
+    $preHeaderPanel.parent().addClass("slick-header");
+    var headerColumnWidthDiff = grid.getHeaderColumnWidthDiff();
+    var m, header, lastColumnGroup = '', widthTotal = 0;
+    
+    for (var i = 0; i < columns.length; i++) {
+      m = columns[i];
+      if (lastColumnGroup === m.columnGroup && i>0) {
+        widthTotal += m.width;
+        header.width(widthTotal - headerColumnWidthDiff)
+      } else {
+          widthTotal = m.width;
+          header = $("<div class='ui-state-default slick-header-column' />")
+            .html("<span class='slick-column-name'>" + (m.columnGroup || '') + "</span>")
+            .width(m.width - headerColumnWidthDiff)
+            .appendTo($preHeaderPanel);
+      }
+      lastColumnGroup = m.columnGroup;
+    }
+  }
+
+var data = {{form.view.table_data|tojson}};
+
+var gSelectedRowNum = 0;
+
+  // stackoverflow.com/questions/2532218
+  function pickRandomProperty(obj) {
+	var result;
+	var count = 0;
+	for (var prop in obj)
+		if (Math.random() < 1/++count)
+		   result = prop;
+	return result;
+  }
+	
+  function requiredFieldValidator(value) {
+    if (value == null || value == undefined || !value.length) {
+      return {valid: false, msg: "This is a required field"};
+    } else {
+      return {valid: true, msg: null};
+    }
+  }
+
+  var options = {{form.view.options|tojson}};
+  
+  var pycolumns = {{form.view.slick_columns|tojson}};
+  var columns = python_to_js(pycolumns);
+
+
+   function PopulateSelect(select, dataSource, addBlank) {
+        var index, len, newOption;
+        if (addBlank) { select.appendChild(new Option('', '')); }
+        $.each(dataSource, function (value, text) {
+             newOption = new Option(text, value);
+            select.appendChild(newOption);
+       });
+    };
+    function Select2Editor(args) {
+        var $input;
+        var defaultValue;
+        var scope = this;
+        var calendarOpen = false;
+        this.keyCaptureList = [ Slick.keyCode.UP, Slick.keyCode.DOWN, Slick.keyCode.ENTER ];
+		
+        this.init = function () {
+            $input = $('<select></select>');
+            $input.width(args.container.clientWidth + 3);
+            PopulateSelect($input[0], args.column.dataSource, true);
+            $input.appendTo(args.container);
+            $input.focus().select();
+			
+            $input.select2({
+                placeholder: '-',
+				allowClear: true
+            });
+        };
+        this.destroy = function () {
+            $input.select2('close');
+            $input.select2('destroy');
+            $input.remove();
+        };
+        this.show = function () {
+        };
+        this.hide = function () {
+        };
+        this.position = function (position) {
+        };
+        this.focus = function () {
+            $input.select2('input_focus');
+        };
+        this.loadValue = function (item) {
+            defaultValue = item[args.column.field];
+            $input.val(defaultValue);
+            $input[0].defaultValue = defaultValue;
+            $input.trigger("change.select2");
+        };
+        this.serializeValue = function () {
+            return $input.val();
+        };
+        this.applyValue = function (item, state) {
+            item[args.column.field] = state;
+        };
+        this.isValueChanged = function () {
+            return (!($input.val() == "" && defaultValue == null)) && ($input.val() != defaultValue);
+        };
+        this.validate = function () {
+            return {
+                valid: true,
+                msg: null
+            };
+        };
+        this.init();
+    }
+	
+    function Select2Formatter(row, cell, value, columnDef, dataContext) {
+        return columnDef.dataSource[value] || '-';
+    }	
+	
+    function Select3Editor(args) {
+        var $input;
+        var defaultValue;
+        var scope = this;
+        var calendarOpen = false;
+        this.keyCaptureList = [ Slick.keyCode.UP, Slick.keyCode.DOWN, Slick.keyCode.ENTER ];
+		//console.log(args);
+		//cell_class = args.container.className.split(/[ ]/);
+		
+		
+		
+		/*for (const cls of cell_class) {
+			if (cls.charAt(0) == "l" && !isNaN(cls.charAt(1)))
+				cls.substring(1);
+		}*/
+		var cell = args.container;
+
+		var dataSource_id = data[gSelectedRowNum][args.column.query_dropdown_filter_key];
+		
+        this.init = function () {
+            $input = $('<select></select>');
+            $input.width(args.container.clientWidth + 3);
+			//console.log(args.column);
+            PopulateSelect($input[0], args.column.select3_dataSource[dataSource_id], true);
+            $input.appendTo(args.container);
+            $input.focus().select();
+			
+            $input.select2({
+                placeholder: '-',
+				allowClear: true
+            });
+        };
+        this.destroy = function () {
+            $input.select2('close');
+            $input.select2('destroy');
+            $input.remove();
+        };
+        this.show = function () {
+        };
+        this.hide = function () {
+        };
+        this.position = function (position) {
+        };
+        this.focus = function () {
+            $input.select2('input_focus');
+        };
+        this.loadValue = function (item) {
+            defaultValue = item[args.column.field];
+            $input.val(defaultValue);
+            $input[0].defaultValue = defaultValue;
+            $input.trigger("change.select2");
+        };
+        this.serializeValue = function () {
+            return $input.val();
+        };
+        this.applyValue = function (item, state) {
+            item[args.column.field] = state;
+        };
+        this.isValueChanged = function () {
+            return (!($input.val() == "" && defaultValue == null)) && ($input.val() != defaultValue);
+        };
+        this.validate = function () {
+            return {
+                valid: true,
+                msg: null
+            };
+        };
+        this.init();
+    }
+	
+    function Select3Formatter(row, cell, value, columnDef, dataContext) {
+        return columnDef.dataSource[value] || '-';
+    }	
+</script>
+<script>
+  //console.log(orgs);
+
+  $(function () {
+    grid = new Slick.Grid("#{{slick_id}}", data, columns, options);
+    grid.setSelectionModel(new Slick.CellSelectionModel());
+	grid.registerPlugin(new Slick.AutoTooltips());
+	
+	// set keyboard focus on the grid
+    grid.getCanvasNode().focus();
+	grid.registerPlugin(new Slick.CellExternalCopyManager(pluginOptions));
+	
+    grid.onAddNewRow.subscribe(function (e, args) {
+      var item = args.item;
+	  item["id"] = data.length + 1;
+	  //console.log(item);
+      grid.invalidateRow(data.length);
+      data.push(item);
+      grid.updateRowCount();
+      grid.render();
+    });	
+	grid.onBeforeEditCell.subscribe(function(e, args) {
+		//console.log(args.row);
+		gSelectedRowNum = args.row;
+	});
+	
+	grid.onCellChange.subscribe(function (e,args) {
+	  var i = 0;
+	  for (i = 0; i < columns.length; i++) {
+		col = columns[i];
+		if (col.set_choices_on_cell_change) {
+			var query_dropdown_filter_col;
+			var j = 0;
+		    for (j = 0; j < columns.length; j++) {
+				_col = columns[j];
+				if (_col.field == col.query_dropdown_filter_key) {
+					query_dropdown_filter_col = _col;
+					break;
+				}
+			}
+			
+			if (args.cell != j)
+				continue;
+			
+		    //console.log(args, i);
+			//console.dir(query_dropdown_filter_col);
+			//var filter_key = col.query_dropdown_filter_key;
+			//var filter_val = args.item[filter_key];
+			//console.dir(data[gSelectedRowNum]);
+			//console.dir(col.field);
+			
+			// invalidate selected column value on filter key change
+			if (data[gSelectedRowNum] !== undefined) {
+				var municipality_id = data[gSelectedRowNum][col.query_dropdown_filter_key];
+				//console.dir(orgs[municipality_id]);
+				var new_organization_id = Object.keys(col.select3_dataSource[municipality_id]).sort()[0];
+				console.log("new_organization_id", new_organization_id);
+				//if (new_organization_id !== undefined) {
+					data[gSelectedRowNum][col.field] = new_organization_id;
+					grid.invalidateRow(gSelectedRowNum);
+					grid.render();
+				//}
+			}
+
+		}
+	  }
+      //console.log(args);
+    });
+	grid.init();
+    grid.onColumnsResized.subscribe(function (e, args) {
+      CreateAddlHeaderRow();
+    });
+    
+    CreateAddlHeaderRow();
+
+$(document).ready(function() {
+   $("#{{form_id}}").on('submit',function (e) {
+		var form_valid = true;
+
+		var i = 0;
+		for (const row of data) {
+			//if (!form_valid)
+			//	break;
+
+			for (var key in row) {
+				cell = row[key];
+				
+				// NaN check
+				//console.log(i, key, cell);
+				if (cell != 0 && (cell !== cell || cell === undefined || cell == "")) {
+					var j = 0;
+					for (const col of columns) {
+						if (col.field == key)
+							break;
+						j++;
+					}
+					console.log(i, j, cell);
+					form_valid = false;
+					//console.log(i, j);
+					grid.setActiveCell(i, j);
+					grid.focus();
+					try {
+						grid.gotoCell(i, j, true);
+					} catch {
+						continue;
+					}
+					break;
+				}
+			}
+			
+			i++;
+		}
+		
+		console.log(form_valid);
+	
+		if (form_valid) {
+			 $("input[name='data']").val(JSON.stringify(data));
+			 $.ajax({
+				type: 'post',
+				url: '{{route_url}}',
+				data: $('#{{form_id}}').serialize(),
+				success: function (q) {
+					console.log("success!");
+				}
+			});
+			
+			alert( "{{ _("data was saved!") }}" );
+		} else {
+			alert( "{{ _("form is not valid") }}" );
+		}
+
+		e.preventDefault();
+	});
+  })
+ });
+ 
+   function {{slick_id}}_add_rows_func(){
+		var item;
+        //alert($("#{{slick_id}}_rows_num").val());
+		var rows_num = $("#{{slick_id}}_rows_num").val() || 0;
+		
+		for (var i = 0; i < rows_num; i++) {
+			item = {"id": data.length + 1};
+			grid.invalidateRow(data.length);
+			data.push(item);
+		}
+		
+		grid.updateRowCount();
+		grid.render();
+		
+   }; 
+</script>
+{% endblock %}

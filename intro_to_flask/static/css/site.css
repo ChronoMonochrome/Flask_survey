@@ -1,0 +1,58 @@
+	/* Template layout parameters */
+	
+
+	#wrapper {
+		margin-top:10px;
+	}
+	/* Template fonts */
+	/*
+	body {
+		font-size:13px;
+
+					font-family:Verdana, Helvetica, Sans-Serif;
+						line-height:1.3em;
+	}*/
+
+	/* Template colors */
+/*
+	body {
+		background-color: #FFFFFF;
+		color: #555555;
+	}
+*/
+	#wrapper, #foot_container {
+		background-color: #EFEFEF;
+		border: 1px solid #FFFFFF;
+	}
+
+	
+	#header {
+		background-color: #FFFFFF;
+		border-top:1px solid #222222;
+		border-left:1px solid #222222;	
+		border-right:1px solid #222222;	
+	}
+	.heckl, .heckr {  
+		border-top: 10px solid #00477D;
+	}
+
+	.feckl, .feckr {  
+		border-bottom: 10px solid #00477D;
+	}
+
+	#wrapper #leftcol h3.moduleh3, #wrapper #rightcol h3.moduleh3	 {
+		background-color: #0066B3;
+		border-top:	1px solid #555555;
+		color: #FFFFFF;
+	}
+	#wrapper #leftcol h3.moduleh3	 {
+		border-left: 1px solid #999999;
+		border-right: 1px solid #555555;
+	}
+	#wrapper #rightcol h3.moduleh3	 {
+		border-right: 1px solid #999999;
+		border-left: 1px solid #555555;
+	}
+	.h3eckl, .h3eckr {  
+		border-top: 10px solid #00477D;
+	}

@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/template.css" type="text/css" />
+<link rel="stylesheet" href="/static/css/site.css" type="text/css" />
+{% endblock %}
+
+  {% for error in errors %}
+    <div class="flash_error">{{ error }}</div>
+  {% endfor %}
+
+  {% for message in messages %}
+    <div class="flash_info">{{ message }}</div>
+  {% endfor %}
+
+<!--  <div class="jumbo"> -->
+   <div id="wrapper" style="max-width:1180px;">
+
+
+     <div id="header_container">
+       <div id="header">
+          <div id="logo">
+              <a class="imglogo" href="/"><img alt="Logo" src="/static/img/institut_2015_1x2_print2_2.jpg"/></a>
+              <a style="color:#0066B3;" class="logo" href="/"> Социально-психологический опрос</a>
+          </div>
+          <span class="heckl">&nbsp;</span>
+          <span class="heckr">&nbsp;</span>
+        </div>
+       </div> <!-- header -->
+     </div> <!-- header_container -->
+<!--
+  {% if current_user.is_authenticated %}
+    {% if surveys_count %}
+      {% for name, count in surveys_count.items() %}
+          <div class="flash_info">
+              {{ _("survey_count") }} ({{ _(name) }}): {{ count }}
+          </div>
+          <div class="clearfix" style="margin-top: 2px"></div>
+      {% endfor %}
+    {% endif %}
+-->
+<p align="center">
+	<h3>
+		{% if not "adm" in current_user.login and current_user.login != "operator" %}
+		<a href="/survey_teachers">
+			Опрос
+ 		</a>
+		{% else %}
+		<a href="/count_surveys">
+			Количество анкет в разрезе ОО
+		</a>
+		{% endif %}
+	</h3>
+</p>
+
+  {% if current_user.login == "admin" or current_user.login == "operator" %}
+
+  {% if show_all %}
+  <ul>
+
+  <p> Результаты анкетирования ({{ _(survey_name) }}) </p>
+  {% for survee in survees %}
+    {% if surveys_count_per_survee %}
+    <li> <a href="{{url_for("survey_export", user_login=survee.login, survey_name = survey_name)}}"> {{ survee.municipality }}, {{ survee.name }} (Количество анкет: {{ surveys_count_per_survee[survee.name] }} ) </a> </li>
+    {% else %}
+    <li> <a href="{{url_for("survey_export", user_login=survee.login, survey_name = survey_name)}}"> {{ survee.municipality }}, {{ survee.name }} </a> </li>
+    {% endif %}
+
+  {% endfor %}
+  </ul>
+  {% else %}
+  {% endif %}
+
+  {% endif %}
+
+
+  {% if not show_all %}
+  {% for survey_name in surveys %}
+  <p> Результаты анкетирования </p>
+  {% if current_user.login != "operator" %}
+  <a href="{{url_for("survey_export", survey_name = survey_name)}}"> Все организации, zip архив </a>
+  <br>
+  {% endif %}
+  <a href="{{url_for(".home", show_all = True, survey_name = survey_name)}}"> В разрезе организаций </a>
+  <div class="clearfix" style="margin-top: 23px"></div>
+  {% endfor %}
+
+  {% endif %}
+  {% endif %}
+
+   </div> <!-- wrapper -->
+
+<!--
+    <h2>{{ _("welcome_str") }}<h2>
+    <h3>{{ _("welcome_str2") }}<h3>
+  </div>
+-->
+{% endblock %}
