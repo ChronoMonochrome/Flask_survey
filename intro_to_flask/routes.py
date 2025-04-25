@@ -20,20 +20,15 @@ from sqlalchemy.sql.expression import func
 
 import openpyxl
 from openpyxl.workbook import Workbook
-from openpyxl.writer.excel import save_virtual_workbook
 
-import demjson
 import pandas as pd
 import numpy as np
 
 from .models import User, SurveySchool, SurveyParents, SurveyTeachers, Student, StudentCompetition, Teacher, Employee, Municipality, Organization, SettlementType, EduOrganizationLevel, EducationType, EduCategory, AgeRange, TeachingExperienceRange, WorkExperienceSubjectRange, TotalLoadRange, LoadOnSubjectRange, TrainingInstitution, TrainingDate, RetrainingInstitution, RetrainingDate
-from .forms import contact_form, upload_form, signup_form, signin_form, test_form as tf, nsur_table_form
-from .form_factory import FormFactory
-from .dashforms import simple_dash_form, profile_form
+from .forms import signup_form, signin_form
 
 from werkzeug.utils import secure_filename
 
-form_factory = FormFactory(app)
 mail = Mail()
 
 login_manager = LoginManager()
@@ -112,57 +107,6 @@ def ensure_folder_exists(folder):
 	if not os.path.isdir(folder):
 		os.makedirs(folder)
 
-@app.route("/upload_file", methods=["GET", "POST"])
-@login_required
-def upload_file():
-	form = upload_form.UploadForm()
-
-	if request.method == "POST":
-		if not form.validate_on_submit():
-			return render_template("upload.html", form = form, success = False)
-
-		# check if the post request has the file part
-		if "file" not in request.files:
-			return render_template("upload.html", form = form, no_selected_file = True)
-
-		file = request.files["file"]
-		# if user does not select file, browser also
-		# submit an empty part without filename
-		if file.filename == "":
-			return render_template("upload.html", form = form, no_selected_file = True)
-		if file and allowed_file(file.filename):
-			filename = secure_filename(file.filename)
-			user_folder = os.path.join(app.config["UPLOAD_FOLDER"], session["login"])
-			ensure_folder_exists(user_folder)
-
-			file.save(os.path.join(user_folder, filename))
-			return render_template("upload.html", form = form, success = True)
-		else:
-			return render_template("upload.html", form = form, not_allowed_ext = True)
-
-	return render_template("upload.html", form = form, success = False)
-
-@app.route("/contact", methods=["GET", "POST"])
-def contact():
-	form = contact_form.ContactForm()
-
-	if request.method == "POST":
-		if form.validate() == False:
-			flash(gettext("All fields are required."))
-			return render_template("contact.html", form = form)
-		else:
-			'''msg = Message(form.subject.data, sender="contact@example.com", recipients=["your_email@example.com"])
-			msg.body = """
-			From: %s <%s>
-			%s
-			""" % (form.name.data, form.email.data, form.message.data)
-			mail.send(msg)'''
-
-			return render_template("contact.html", success = True)
-
-	elif request.method == "GET":
-		return render_template("contact.html", form = form)
-
 @app.route("/signup", methods=["GET", "POST"])
 #@login_required
 def signup():
@@ -219,13 +163,6 @@ def register_additional():
 	return "success!"
 
 
-@app.route("/dash")
-@login_required
-def dash():
-	form = simple_dash_form.form
-
-	return render_template("dash.html", src = form.url_base_pathname)
-
 @app.route("/profile")
 @login_required
 def profile():
@@ -251,8 +188,6 @@ def survey_school():
 		app.db.session.commit()
 		messages = json.dumps({"main": "Благодарим за участие в опросе"})
 		return redirect(url_for('.home', messages=messages))
-		#submitted_data = demjson.decode(form.data.data)
-		#form.on_submit(submitted_data)
 
 	return render_template("survey_school_template1.html")
 	
@@ -272,8 +207,6 @@ def survey_parents():
 		app.db.session.commit()
 		messages = json.dumps({"main": gettext("Your data was saved.")})
 		return redirect(url_for('.home', messages=messages))
-		#submitted_data = demjson.decode(form.data.data)
-		#form.on_submit(submitted_data)
 
 	return render_template("survey_parents_template.html")
 	
@@ -299,8 +232,6 @@ def survey_teachers():
 		app.db.session.commit()
 		messages = json.dumps({"main": gettext("Благодарим за участие в опросе")})
 		return redirect(url_for('.home', messages=messages))
-		#submitted_data = demjson.decode(form.data.data)
-		#form.on_submit(submitted_data)
 
 	return render_template("survey_teachers_template.html")
 
@@ -418,8 +349,9 @@ def survey_export():
 				row.append(teachers_num)
 			ws.append(row)
 
-		output = io.BytesIO(save_virtual_workbook(wb))
-		output.seek(0)
+		output = io.BytesIO()
+		wb.save(output) # Changed to wb.save
+		output.seek(0)  # Reset the stream position to the beginning
 		return output
 		
 	if user_login:
@@ -480,8 +412,9 @@ def survey_export_all():
 		for row in wb_data:
 			ws.append(row)
 
-		output = io.BytesIO(save_virtual_workbook(wb))
-		output.seek(0)
+		output = io.BytesIO()
+		wb.save(output) # Changed to wb.save
+		output.seek(0)  # Reset the stream position to the beginning
 		return output
 		
 	output = proceed_single()
@@ -529,8 +462,9 @@ def survey_export1():
 				row.append(teachers_num)
 			ws.append(row)
 
-		output = io.BytesIO(save_virtual_workbook(wb))
-		output.seek(0)
+		output = io.BytesIO()
+		wb.save(output) # Changed to wb.save
+		output.seek(0)  # Reset the stream position to the beginning
 		return output
 		
 	#if user_login:
@@ -577,157 +511,6 @@ def excel_template():
 	writer.close()
 	output.seek(0)
 	return send_file(output, attachment_filename=filename, as_attachment=True)
-	
-@app.route('/nsur_table', methods=["GET", "POST"])
-@login_required
-def nsur_table():
-	user = User.query.filter_by(login = session["login"]).first()
-
-	if user is None:
-		return redirect(url_for("signin"))
-	
-	if user.student_id:
-		return redirect("/")
-
-	form = nsur_table_form.NsurTableForm()
-
-	form.on_update()
-	if request.method == "POST":
-		submitted_data = demjson.decode(form.data.data)
-		form.on_submit(submitted_data)
-
-	return render_template("slick_select2_editor.html", form = form, form_id = "slick_select2_form", slick_id = form.myGrid.id, route_url = "/nsur_table", time = str(time.time()))
-
-
-@app.route('/student_form', methods=["GET", "POST"])
-@login_required
-def student_form():
-	id = request.args.get("id")
-	hide_header = request.args.get("hide_header", False)
-	user = User.query.filter_by(login = session["login"]).first()
-	if not id:
-		if not user.student_id:
-			print("not user.student_id")
-			return redirect("/")
-		id = user.student_id
-
-	student = Student.query.filter_by(id = id).first()
-	if not student:
-		print("not student")
-		return redirect("/")
-
-	custom_js = ["""
-on_change = function() {
-   municipality_id = this.value;
-   console.log(municipality_id);
-   $.ajax({
-    url: "/organizations/name?municipality_id=" + municipality_id,
-    type: 'GET',
-    success: function(orgs) {
-        var org_sel = $("#organization_id");
-        org_sel.empty();
-        console.log(orgs);
-        $.each(orgs, function(value, key) {
-            org_sel.append($("<option></option>")
-               .attr("value", value).text(key));
-        });
-    }
-  });
-}
-
-$("#municipality_id").on('change', on_change);"""]
-
-	form = form_factory.create_form(student, form_title = gettext("student_form"), route_url = url_for("student_form", id = id), custom_js = custom_js)
-
-	if request.method == "POST":
-		form.on_submit()
-		student.age_range_id = form.age_range_id.data
-		student.teaching_experience_range_id = form.teaching_experience_range_id.data
-		student.work_experience_subject_range_id = form.work_experience_subject_range_id.data
-		student.total_load_range_id = form.total_load_range_id.data
-		student.load_on_subject_range_id = form.load_on_subject_range_id.data
-		student.municipality_id = form.municipality_id.data
-		student.organization_id = form.organization_id.data
-		student.settlement_type_id = form.settlement_type_id.data
-		student.level_educational_organization_id = form.level_educational_organization_id.data
-		student.education_type_id = form.education_type_id.data
-		student.category_id = form.category_id.data
-		student.training_institution_id = form.training_institution_id.data
-		student.training_date_id = form.training_date_id.data
-		student.retraining_institution_id = form.retraining_institution_id.data
-		student.retraining_date_id = form.retraining_date_id.data
-		student.name = form.name.data
-
-		app.db.session.commit()
-		
-		# save the post timestamp to reuse it in Dash
-		post_session_data = session.get("student_post", {})
-		post_session_data["timestamp"] = time.time()
-		#post_session_data["timestamp"] = post_session_data.get("timestamp", [0, 0])
-		#post_session_data["idx"] = post_session_data.get("idx", 0)
-		#post_session_data["timestamp"][post_session_data["idx"]] = time.time()
-		#post_session_data["idx"] = (post_session_data["idx"] + 1) % 2
-		#print(session.get("student_post_data"))
-		
-		session["student_post"] = post_session_data
-		return redirect(url_for("student_form", id = id, hide_header = hide_header))
-	elif request.method == "GET":
-		form.age_range_id.data = student.age_range_id
-		form.teaching_experience_range_id.data = student.teaching_experience_range_id
-		form.work_experience_subject_range_id.data = student.work_experience_subject_range_id
-		form.total_load_range_id.data = student.total_load_range_id
-		form.load_on_subject_range_id.data = student.load_on_subject_range_id
-		form.municipality_id.data = student.municipality_id
-		if not form.municipality_id.data:
-			form.municipality_id.data = Municipality.query.first().id
-
-		if form.municipality_id.data:
-			form.organization_id.choices = [(o.id, o.name) for o in Organization.query.filter_by(municipality_id = form.municipality_id.data).all()]
-			
-		form.organization_id.data = student.organization_id
-		print(student.organization_id)
-
-		form.settlement_type_id.data = student.settlement_type_id
-		form.level_educational_organization_id.data = student.level_educational_organization_id
-		form.education_type_id.data = student.education_type_id
-		form.category_id.data = student.category_id
-		form.retraining_institution_id.data = student.retraining_institution_id
-		form.retraining_date_id.data = student.retraining_date_id
-		form.training_institution_id.data = student.training_institution_id
-		form.training_date_id.data = student.training_date_id
-		return form.on_render()
-
-@app.route("/test_form", methods=["GET", "POST"])
-@login_required
-def test_form():
-	user = User.query.filter_by(login = session["login"]).first()
-	if not user.student_id:
-		return redirect(url_for("profile"))
-
-	form = tf.TestForm()
-	#form.municipality_id.choices = [
-        #                               (1, lazy_gettext('student')),
-        #                               (2, lazy_gettext('student'))
-	#]
-	form.municipality_id.choices = [(m.id, m.name_of_municipality) for m in Municipality.query.order_by('id')]
-
-	student = Student.query.filter_by(id = user.student_id).first()
-
-	if request.method == "GET":
-		#print(student.municipality_id)
-		#municipality = Municipality.query.filter_by(id = student.municipality_id).first()
-		#print(municipality.name_of_municipality)
-		#municipality_def_value = lambda: Municipality.query.filter(Municipality.id == student.municipality_id).one_or_none()
-		form.municipality_id.data = student.municipality_id
-		return render_template("test.html", form = form, name_def_value = student.name)
-	elif request.method == "POST":
-		#print(form.name_of_municipality.data.name_of_municipality)
-		#print(form.name_of_municipality.data.id)
-		#print(dir(form.name_of_municipality.data))
-		student.municipality_id = form.municipality_id.data
-		student.name = form.name.data
-		app.db.session.commit()
-		return redirect(url_for("test_form"))
 
 
 @app.route("/signout")
@@ -736,20 +519,3 @@ def signout():
 	logout_user()
 	del session["login"]
 	return redirect(url_for("home"))
-
-
-@app.route('/support/team-members-update', methods=['GET','POST'])
-def update_team_members():
-	teamform = tf.TeamForm()
-	teamform.title.data = "My Team" # change the field's data
-	for member in [{"name": "text", "id": 1, "share": 0},
-					{"name": "text", "id": 1, "share": 0},
-					{"name": "text", "id": 1, "share": 0}]: # some database function to get a list of team members
-		member_form = tf.MemberForm()
-		member_form.name = member["name"] # These fields don't use 'data'
-		member_form.member_id = member["id"]
-		member_form.inbox_share = member["share"]
-
-		teamform.teammembers.append_entry(member_form)
-
-	return render_template('team.html', teamform = teamform)

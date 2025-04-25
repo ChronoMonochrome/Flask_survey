@@ -1,20 +1,22 @@
 from collections import OrderedDict
 
 from intro_to_flask import app
-from wtforms import Field, DecimalField, IntegerField, FloatField, SelectField, StringField, TextField, TextAreaField, SubmitField, validators, ValidationError, PasswordField, DateField
-
-#if __name__ == "__main":
-from .widgets import DatePicker
-#else:
-#from widgets import DatePicker
+from wtforms import Field, DecimalField, IntegerField, FloatField, SelectField, StringField, TextAreaField, SubmitField, validators, ValidationError, PasswordField, DateField
 
 from flask_babel import lazy_gettext
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, Integer, BigInteger, Numeric, Float, String, DateTime, ForeignKey, Table
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
-from werkzeug import generate_password_hash, check_password_hash
-from wtforms.validators import Required, Length
+
+try:
+    from werkzeug.security import generate_password_hash, check_password_hash  # for Werkzeug 3.x and above
+except ImportError:
+    from werkzeug import generate_password_hash, check_password_hash  # for Werkzeug 0.14.1
+
+import pymysql
+pymysql.install_as_MySQLdb()
+from flask_sqlalchemy import SQLAlchemy
 
 app.db = SQLAlchemy(app)
 
@@ -52,24 +54,16 @@ class ColumnFieldsBound(Column):
 		field.field_kwargs = OrderedDict()
 		field.field_kwargs["label"] = lazy_gettext(field.field_name)
 		if (field.field_type == StringField):
-			field.field_kwargs["validators"] = [Required(), Length(max = getattr(self.type, "length", 100))]
 			field.field_kwargs["render_kw"] = {'maxlength': getattr(self.type, "length", 100)}
 		elif (field.field_type == IntegerField):
-			field.field_kwargs["validators"] = [Required()]
 			field.field_kwargs["render_kw"] = {"type": "number", "min": getattr(field, "min", -(2**31)), "max": getattr(field, "max", 2**32-1)}
 		elif (field.field_type == DecimalField):
-			field.field_kwargs["validators"] = [Required()]
 			field.field_kwargs["render_kw"] = {"max": 2**31-1}
 			field.field_kwargs["places"] = 2
 		elif (field.field_type == SelectField):
-			field.field_kwargs["validators"] = [Required()]
 			field.field_kwargs["coerce"] = int
 		elif (field.field_type == DateField):
-			field.field_kwargs["validators"] = [Required()]
-			#pass
-		elif (field.field_type == DatePicker):
-			field.field_kwargs["validators"] = [Required()]
-			field.field_kwargs["language"] = "ru"
+			pass
 		else:
 			raise ValueError("No known binding for column type %s and field type %s" % (str(self.type), str(field.field_type)))
 
@@ -341,7 +335,7 @@ class Teacher(app.db.Model):
 class Employee(app.db.Model):
 	__tablename__ = "employee"
 	id				= Column(Integer, primary_key = True)
-	user				= relationship("User", uselist = False, backref = __tablename__)
+	user				= relationship("User", uselist = False, back_populates="students", overlaps="students,users")
 
 class Municipality(app.db.Model):
 	__tablename__ = "municipality"
@@ -442,4 +436,5 @@ class RetrainingDate(app.db.Model):
 	students = relationship("Student", backref = __tablename__)
 	value = Column(String(100))
 
-app.db.create_all()
+with app.app_context():
+	app.db.create_all()

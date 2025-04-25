@@ -16,7 +16,6 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    {{ JSGlue.include() }}
 
     {% block head %}
     {% endblock %}
@@ -39,11 +38,8 @@
         <ul class="menu">
           <li><a href="{{ url_for('home') }}">На главную</a></li>
          <!-- <li><a href="{{ url_for('about') }}">{{ _("About") }}</a></li>
-          <li><a href="{{ url_for('contact') }}">{{ _("Contact") }}</a></li> -->
           {% if current_user.is_authenticated %}
          <!-- <li><a href="{{ url_for('profile') }}">{{ _("Profile") }}</a></li> -->
-         <!-- <li><a href="{{ url_for('dash') }}">{{ _("Dash") }}</a></li> -->
-         <!-- <li><a href="{{ url_for('upload_file') }}">{{ _("Upload") }}</a></li> -->
           <li><a href="{{ url_for('signout') }}">Выйти</a></li>
           {% else %}
           <!-- <li><a href="{{ url_for('signup') }}">{{ _("Sign Up") }}</a></li> -->

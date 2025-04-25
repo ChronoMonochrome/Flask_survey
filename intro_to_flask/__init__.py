@@ -3,7 +3,6 @@ from flask import g, request
 from flask import Flask
 from flask_babel import Babel
 from flask_session import Session
-from flask_jsglue import JSGlue
 
 from datetime import timedelta
 
@@ -42,28 +41,13 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config["ALLOWED_EXTENSIONS"] = ALLOWED_EXTENSIONS
 
-from . import dashview
-from . import dashforms
 
 from .routes import mail
 mail.init_app(app)
 
 import intro_to_flask.models
-app.db.init_app(app)
+#app.db.init_app(app)
 
 import intro_to_flask.routes
 
 app.babel = Babel(app)
-
-@app.babel.localeselector
-def get_locale():
-	# if a user is logged in, use the locale from the user settings
-	#ser = getattr(g, "user", None)
-	#if user is not None:
-	#	return user.locale
-	# otherwise try to guess the language from the user accept
-	# header the browser transmits.  We support ru/en in this
-	# example.  The best match wins.
-	return request.accept_languages.best_match(["ru"])
-
-app.jsglue = JSGlue(app)

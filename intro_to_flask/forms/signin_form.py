@@ -2,13 +2,13 @@
 
 from flask_wtf import FlaskForm
 from flask_babel import lazy_gettext, gettext, ngettext
-from wtforms import TextField, TextAreaField, SubmitField, validators, ValidationError, PasswordField
+from wtforms import StringField, TextAreaField, SubmitField, validators, ValidationError, PasswordField
 from .. import models
 
 class SigninForm(FlaskForm):
-	login = TextField("Логин",	[validators.Required(lazy_gettext("Please enter your login.")), \
-							validators.Required(lazy_gettext("Please enter your login."))])
-	password = PasswordField(lazy_gettext('Пароль'), [validators.Required(lazy_gettext("Please enter a password."))])
+	login = StringField("Логин",	[validators.DataRequired(lazy_gettext("Please enter your login.")), \
+							validators.DataRequired(lazy_gettext("Please enter your login."))])
+	password = PasswordField(lazy_gettext('Пароль'), [validators.DataRequired(lazy_gettext("Please enter a password."))])
 	submit = SubmitField(lazy_gettext("Войти"))
 
 	def __init__(self, *args, **kwargs):

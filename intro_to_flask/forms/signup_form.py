@@ -1,20 +1,14 @@
 from flask_wtf import FlaskForm
 from flask_babel import lazy_gettext, gettext, ngettext
-from wtforms import PasswordField, SubmitField, TextField, TextAreaField, SelectField, SubmitField, validators, ValidationError
+from wtforms import PasswordField, SubmitField, StringField, TextAreaField, SelectField, SubmitField
 from .. import models
 
 class SignupForm(FlaskForm):
-	login = TextField(lazy_gettext("Login"), [
-			validators.Required(lazy_gettext("Please enter your login."))
-	])
+	login = StringField(lazy_gettext("Login"))
 
-	name = TextField(lazy_gettext("Name"), [
-			validators.Required(lazy_gettext("Please enter your name."))
-	])
+	name = StringField(lazy_gettext("Name"))
 
-	password = PasswordField(lazy_gettext('Password'), [
-			validators.Required(lazy_gettext("Please enter a password."))
-	])
+	password = PasswordField(lazy_gettext('Password'))
 
 	role = SelectField(lazy_gettext('Role'), choices = [
 					('student', lazy_gettext('student')),
