@@ -1,44 +1,57 @@
-# Intro to Flask
+# Flask Survey Project
 
-This is a sample application for the Intro to Flask series on Nettuts+.
+Welcome to the Flask Survey project! This project is a web application built using Flask that allows users to create and manage surveys for different roles (students, parents, teachers). It integrates a customizable form system and includes user authentication features.
 
-This repo has the following checkpoints
-* [00\_project\_structure](https://github.com/lpolepeddi/intro-to-flask/tree/00_project_structure)
-* [01\_home\_page](https://github.com/lpolepeddi/intro-to-flask/tree/01_home_page)
-* [02\_app\_styling](https://github.com/lpolepeddi/intro-to-flask/tree/02_app_styling)
-* [03\_about\_page](https://github.com/lpolepeddi/intro-to-flask/tree/03_about_page)
-* [04\_nav\_styling](https://github.com/lpolepeddi/intro-to-flask/tree/04_nav_styling)
-* [05\_contact\_form](https://github.com/lpolepeddi/intro-to-flask/tree/05_contact_form)
-* [06_contact_styling](https://github.com/lpolepeddi/intro-to-flask/tree/06_contact_styling)
-* [07\_form\_validations](https://github.com/lpolepeddi/intro-to-flask/tree/07_form_validations)
-* [08\_error\_message\_flashing](https://github.com/lpolepeddi/intro-to-flask/tree/08_error_message_flashing)
-* [09\_specific\_message\_flashing](https://github.com/lpolepeddi/intro-to-flask/tree/09_specific_message_flashing)
-* [10\_send\_email](https://github.com/lpolepeddi/intro-to-flask/tree/10_send_email)
-* [11\_success\_message](https://github.com/lpolepeddi/intro-to-flask/tree/11_success_message)
-* [12\_contact\_nav\_link](https://github.com/lpolepeddi/intro-to-flask/tree/12_contact_nav_link)
-* [13\_packaged\_app](https://github.com/lpolepeddi/intro-to-flask/tree/13_packaged_app)
-* [14\_db_config](https://github.com/lpolepeddi/intro-to-flask/tree/14_db_config)
-* [15\_user\_model](https://github.com/lpolepeddi/intro-to-flask/tree/15_user_model)
-* [16\_signup\_form](https://github.com/lpolepeddi/intro-to-flask/tree/16_signup_form)
-* [17\_profile\_page](https://github.com/lpolepeddi/intro-to-flask/tree/17_profile_page)
-* [18\_signin\_form](https://github.com/lpolepeddi/intro-to-flask/tree/18_signin_form)
-* [19\_signout](https://github.com/lpolepeddi/intro-to-flask/tree/19_signout)
-* [20\_visibility\_control](https://github.com/lpolepeddi/intro-to-flask/tree/20_visibility_control)
+## Features
 
-You can switch to each checkpoint to see what the code looks like up to that point by either cloning the repo or using the GitHub branch menu.
+- **User Authentication**: Supports login, signup, and user roles management.
+- **Survey Management**: Create and manage surveys for schools, parents, and teachers.
+- **File Uploads**: Users can upload files securely.
+- **Data Export**: Export survey results in CSV and Excel formats.
+- **Localization**: Supports multilingual content through Flask-Babel.
 
-## Cloning the repo
-First clone this repo by running
-```bash
-$ git clone https://github.com/lpolepeddi/intro-to-flask.git
-```
+## Getting Started
 
-Then fetch each checkpoint to see what the code looks like at that point by running `$ git checkout [<checkpoint-name>]`. For example, to view the code at checkpoint "05\_contact\_form", type
-```bash
-$ git checkout 05_contact_form
-```
+### Prerequisites
 
-## Using the GitHub branch menu
-Alternatively, you can use GitHub's web interface to view each checkpoint. Click on the branch menu and select the checkpoint you want to view, shown below:
+- Python 3.x
+- Flask
+- SQLAlchemy
+- Flask-Login
+- Flask-Mail
+- Flask-Babel
+- Other dependencies listed in `requirements.txt`
 
-![GitHub Branch Menu](https://raw.github.com/lpolepeddi/intro-to-flask/master/intro_to_flask/static/img/branch-menu.png)
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Chronomonochrome/flask_survey.git
+   cd flask-survey
+   ```
+
+2. Install the required packages:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Set up the database and create necessary tables (using Flask-Migrate or similar).
+
+4. Configure the application settings in `intro_to_flask/__init__.py`.
+
+5. Run the application:
+
+   ```bash
+   python runserver.py
+   ```
+
+### Usage
+
+- Visit `http://127.0.0.1:8001` in your web browser to access the application.
+- Sign up or log in to start creating and managing surveys.
+
+## Contribution
+
+If you want to contribute to the project, feel free to fork the repository, make changes, and submit a pull request.
